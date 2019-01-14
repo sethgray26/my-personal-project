@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import Navbar from './components/Navbar/Navbar'
+// import Navbar from './components/Navbar/Navbar'
 // import Welcome from './components/Welcome/Welcome'
 // import Homepage from './components/HomePage/Homepage'
 // import Profile from './components/Profile/Profile'
 // import Constellations from './components/Constellations/Constel'
 // import Planets from './components/Planets/Planets'
-// import Galaxy from './components/Galaxy/Galaxy'
+// import Galaxies from './components/Galaxies/Galaxies'
 import routes from './routes'
 
 
@@ -22,8 +22,8 @@ class App extends Component {
         <Profile />
         <Constellations />
         <Planets />
-        <Galaxy />
-        <Navbar /> */}
+        <Galaxies /> */}
+        {/* <Navbar /> */}
         {routes}
       </div>
     );

@@ -5,7 +5,7 @@ import Homepage from './components/HomePage/Homepage'
 import Profile from './components/Profile/Profile'
 import Constellations from './components/Constellations/Constel'
 import Planets from './components/Planets/Planets'
-import Galaxy from './components/Galaxy/Galaxy'
+import Galaxies from './components/Galaxies/Galaxies'
 
 
 
@@ -18,6 +18,6 @@ export default (
         <Route path='/profile' component={Profile} />
         <Route path='/constellations' component={Constellations} />
         <Route path='/planets' component={Planets} />
-        <Route path='/galaxy' component={Galaxy} />
+        <Route path='/galaxies' component={Galaxies} />
     </Switch>
 )
