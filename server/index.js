@@ -17,7 +17,7 @@ app.use(session({
 }))
 
 massive(CONNECTION_STRING).then((db) => {
-    app.set('db',db)
+    app.set('db', db)
     app.listen(SERVER_PORT, () => {
         console.log(`${SERVER_PORT} Ducks Marching On Rome.`)
     })
@@ -26,3 +26,8 @@ massive(CONNECTION_STRING).then((db) => {
 
 app.post('/welcome/register', controller.register)
 app.post('/welcome/login', controller.login)
+
+app.get('/welcome/logout', (req, res) => {
+    req.session.destroy();
+    res.redirect('http://localhost:3000/#/')
+})
