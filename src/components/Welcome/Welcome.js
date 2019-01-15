@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { connect } from 'react-redux'
+import { getUserData } from '../../ducks/reducer'
 
-
-export default class Welcome extends Component {
+class Welcome extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -17,6 +18,7 @@ export default class Welcome extends Component {
         if (res.data.loggedIn) {
             this.props.history.push('/homepage')
         }
+        this.props.getUserData(res.data.userData.username, res.data.userData.id, res.data.userData.profile_pic)
     }
     async login() {
         const { username, password } = this.state
@@ -24,6 +26,7 @@ export default class Welcome extends Component {
         if (res.data.loggedIn) {
             this.props.history.push('/homepage')
         }
+        this.props.getUserData(res.data.userData.username, res.data.userData.id, res.data.userData.profile_pic)
     }
 
 
@@ -50,3 +53,7 @@ export default class Welcome extends Component {
         )
     }
 }
+
+
+
+export default connect(null, { getUserData })(Welcome)
