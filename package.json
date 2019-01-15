@@ -31,6 +31,6 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "main": "server/index.js",
-  "proxy": "http://localhost:4040"
+  "proxy": "http://localhost:4040",
+  "main": "server/index.js"
 }

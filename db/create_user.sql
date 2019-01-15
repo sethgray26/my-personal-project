@@ -1,5 +1,5 @@
 INSERT INTO users
-(username, password, profile_pic)
+(username, password)
 VALUES
-(${username}, ${hash}, ${profile_pic})
+(${username}, ${hash})
 RETURNING *;

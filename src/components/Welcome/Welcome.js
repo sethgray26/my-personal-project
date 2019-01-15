@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 
 export default class Welcome extends Component {
@@ -10,8 +11,20 @@ export default class Welcome extends Component {
             password: ''
         }
     }
-
-
+    async register() {
+        const { username, password } = this.state
+        const res = await axios.post('/welcome/register', { username: username, password: password })
+        if (res.data.loggedIn) {
+            this.props.history.push('/homepage')
+        }
+    }
+    async login() {
+        const { username, password } = this.state
+        const res = await axios.post('/welcome/login', { username: username, password: password })
+        if (res.data.loggedIn) {
+            this.props.history.push('/homepage')
+        }
+    }
 
 
     render() {
@@ -23,14 +36,16 @@ export default class Welcome extends Component {
                 <hr />
                 <p>
                     <span> Username: </span>
-                    <input />
+                    <input onChange={(e) => this.setState({ username: e.target.value })} />
                 </p>
                 <hr />
                 <p>
                     <span> Password: </span>
-                    <input />
+                    <input onChange={(e) => this.setState({ password: e.target.value })} />
                 </p>
                 <hr />
+                <button onClick={() => this.register()}> Register </button>
+                <button onClick={() => this.login()}> Login </button>
             </div>
         )
     }

@@ -2,11 +2,11 @@ const bcrypt = require('bcryptjs')
 
 module.exports = {
     register: async (req, res) => {
-        const { username, password } = req.body;
+        const { username, password} = req.body;
         const db = req.app.get('db');
         const userArr = await db.find_username({ username: username })
         if (userArr.length !== 0) {
-            return res.status(200).send({ message: 'Username Already In Use.' })
+            return res.status(200).send({ message: 'Username Already In use.' })
         }
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt);
