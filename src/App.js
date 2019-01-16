@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import routes from './routes'
 
 import Particles from 'react-particles-js'
@@ -8,6 +8,7 @@ import Particles from 'react-particles-js'
 
 
 class App extends Component {
+
   componentDidMount() {
     var x = document.getElementsByTagName('canvas')[0]
     console.log(x)

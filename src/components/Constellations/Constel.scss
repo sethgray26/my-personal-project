@@ -1,0 +1,103 @@
+$black:#000000;
+$dark-blue: #001757;
+
+$list1: $black, $dark-blue, $black;
+
+@mixin gradient($direction, $list) {
+    background: -webkit-linear-gradient($direction, $list);
+    background: -moz-linear-gradient($direction, $list);
+    background: -o-linear-gradient($direction, $list);
+    background: linear-gradient($direction, $list)
+}
+
+body{
+    height:100vh;
+    width: 100vw;
+    @include gradient(top, $list1)
+}
+body::-webkit-scrollbar{
+    width:0px;
+    height:0px;
+}
+
+.constel-page-img{
+    height: 19rem;
+}
+
+.backdrop{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9998;
+    background: rgba(0, 0, 0, .5);
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+}
+.constel-modal{
+    position: relative;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 60%;
+    @include gradient(top, $list1);
+    -webkit-box-shadow: 1px 2px 8px 2px rgba(0,0,0,0.5); 
+    box-shadow: 1px 2px 8px 2px rgba(0,0,0,0.5);
+    overflow: scroll
+}
+.constel-modal::-webkit-scrollbar{
+    overflow: scroll;
+    width: 1px;
+    height: 1px;
+    background-color: black
+}
+.constel-modal-img{
+    float: left;
+    height: 68%;
+    padding-right: .5%;
+    padding-top: .5%;
+    padding-bottom: .5%;
+    padding-left: 21.5%;
+}
+
+.close-modal{
+    left: 74.89%;
+    position: fixed;
+}
+.constel-text{
+    font-size: 1.2rem;
+    color: antiquewhite;
+    float: left;
+}
+h1{
+    font-size: 1.2rem;
+    color: antiquewhite;
+    float: left;
+}
+.button{
+    opacity: .2;
+}
+.constel-left-row{
+    height: 133.5%;
+    width: 28.1%;
+    left: 3%;
+    background-color: red;
+    position: absolute
+}
+
+.constel-middle-row{
+    height: 133.5%;
+    width: 28.1%;
+    left: 35%;
+    background-color: antiquewhite;
+    position: absolute
+}
+.constel-right-row{
+    height: 133.5%;
+    width: 28.1%;
+    left: 68%;
+    background-color: blue;
+    position: absolute; 
+}

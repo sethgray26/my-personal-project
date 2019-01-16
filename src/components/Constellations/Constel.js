@@ -1,9 +1,19 @@
 import React, { Component } from 'react'
-import './Constel.css'
+import './Constel.scss'
 import Navbar from '../../components/Navbar/Navbar'
-import constel1 from '../../photos/constel1.jpg'
-import constel2 from '../../photos/constel2.jpg'
-import constel3 from '../../photos/constel3.jpg'
+
+import aries from '../../photos/aries.jpg'
+import scorpio from '../../photos/scorpio.png'
+import pisces from '../../photos/pisces.jpg'
+import virgo from '../../photos/virgo.png'
+import cancer from '../../photos/cancer.png'
+import sagitarrius from '../../photos/sagitarrius.jpg'
+import taurus from '../../photos/taurus.png'
+import aquarius from '../../photos/aquarius.jpg'
+import leo from '../../photos/leo.png'
+import libra from '../../photos/libra.jpg'
+import capricorn from '../../photos/capricorn.jpg'
+import gemini from '../../photos/gemini.jpg'
 
 import { Modal, Button } from 'react-bootstrap'
 // import Particles from 'react-particles-js'
@@ -18,15 +28,9 @@ export default class Constellations extends Component {
 
         this.state = {
             show1: false,
-            show2: false
+            // show2: false
         };
     }
-
-    // componentDidMount() {
-    //     var x = document.getElementsByTagName('canvas')[0]
-    //     console.log(x)
-    //     x.height = window.innerHeight
-    // }
 
     handleClose(show) {
         this.setState({ [show]: false });
@@ -43,49 +47,178 @@ export default class Constellations extends Component {
                     <Navbar />
 
                     <figure id='constellation-container'>
+
                         <div className='constel-left-row'>
-                            <div >
-                                <button onClick={() => this.handleShow('show1')}> <img src={constel1} alt='constel1'></img></button>
-                                <Modal show={this.state.show1} >
-                                    <div className='backdrop' onClick={() => this.handleClose('show1')}>
-                                        <figure className='constel1-modal' >
-                                            <Button className='close-modal' onClick={() => this.handleClose('show1')}>X</Button>
-                                            <img className='constel1-modal-img' src={constel1} alt=''></img>
-                                            <p className='constel1-text'> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui vivamus arcu felis bibendum ut tristique et egestas. Vel eros donec ac odio tempor orci. Sit amet risus nullam eget felis. Curabitur gravida arcu ac tortor dignissim convallis. Mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien. In iaculis nunc sed augue lacus viverra vitae. Gravida rutrum quisque non tellus. Eget nunc scelerisque viverra mauris in aliquam sem fringilla. Eget arcu dictum varius duis at consectetur lorem. Nisi est sit amet facilisis magna etiam tempor orci. Ante in nibh mauris cursus mattis molestie a iaculis. Non blandit massa enim nec dui nunc. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque. Mauris cursus mattis molestie a iaculis at erat pellentesque.</p>
-                                        </figure>
-                                    </div>
-                                </Modal>
-                            </div>
+
+
+                            <img className='constel-page-img' onClick={() => this.handleShow('show1')} src={aries} alt='' />
+                            <Modal show={this.state.show1} >
+                                <div className='backdrop' onClick={() => this.handleClose('show1')}>
+                                    <figure className='constel-modal' >
+                                        <Button className='close-modal' onClick={() => this.handleClose('show1')}>X</Button>
+                                        <img className='constel-modal-img' src={aries} alt=''></img>
+                                        <h1> Aries
+                                            <p className='constel-text'>Date of Birth: March 21 -April 19 </p>
+                                        </h1>
+                                    </figure>
+                                </div>
+                            </Modal>
+
+
+                            <img className='constel-page-img' onClick={() => this.handleShow('show4')} src={cancer} alt='' />
+                            <Modal show={this.state.show4} >
+                                <div className='backdrop' onClick={() => this.handleClose('show4')}>
+                                    <figure className='constel-modal' >
+                                        <Button className='close-modal' onClick={() => this.handleClose('show4')}>X</Button>
+                                        <img className='constel-modal-img' src={cancer} alt=''></img>
+                                        <h1> Cancer
+                                            <p className='constel-text'>Date of Birth: May 21 - June 21</p>
+                                        </h1>
+                                    </figure>
+                                </div>
+                            </Modal>
+
+
+                            <img className='constel-page-img' onClick={() => this.handleShow('show7')} src={libra} alt='' />
+                            <Modal show={this.state.show7} >
+                                <div className='backdrop' onClick={() => this.handleClose('show7')}>
+                                    <figure className='constel-modal' >
+                                        <Button className='close-modal' onClick={() => this.handleClose('show7')}>X</Button>
+                                        <img className='constel-modal-img' src={libra} alt=''></img>
+                                        <h1> Libra
+                                        <p className='constel-text'> Date of Birth: September 23 - October 23 </p>
+                                        </h1>
+                                    </figure>
+                                </div>
+                            </Modal>
+
+                            <img className='constel-page-img' onClick={() => this.handleShow('show10')} src={capricorn} alt='' />
+                            <Modal show={this.state.show10} >
+                                <div className='backdrop' onClick={() => this.handleClose('show10')}>
+                                    <figure className='constel-modal' >
+                                        <Button className='close-modal' onClick={() => this.handleClose('show10')}>X</Button>
+                                        <img className='constel-modal-img' src={capricorn} alt=''></img>
+                                        <h1> Capricorn
+                                        <p className='constel-text'> Date of Birth: December 22 - January 19 </p>
+                                        </h1>
+                                    </figure>
+                                </div>
+                            </Modal>
                         </div>
 
                         <div className='constel-middle-row'>
-                            <div >
-                                <button onClick={() => this.handleShow('show2')}> <img src={constel2} alt='constel2'></img></button>
-                                <Modal show={this.state.show2} >
-                                    <div className='backdrop' onClick={() => this.handleClose('show2')}>
-                                        <figure className='constel2-modal'>
-                                            <Button className='close-modal' onClick={() => this.handleClose('show2')}>X</Button>
-                                            <img className='constel2-modal-img' src={constel2} alt=''></img>
-                                            <p className='constel2-text'> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui vivamus arcu felis bibendum ut tristique et egestas. Vel eros donec ac odio tempor orci. Sit amet risus nullam eget felis. Curabitur gravida arcu ac tortor dignissim convallis. Mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien. In iaculis nunc sed augue lacus viverra vitae. Gravida rutrum quisque non tellus. Eget nunc scelerisque viverra mauris in aliquam sem fringilla. Eget arcu dictum varius duis at consectetur lorem. Nisi est sit amet facilisis magna etiam tempor orci. Ante in nibh mauris cursus mattis molestie a iaculis. Non blandit massa enim nec dui nunc. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque. Mauris cursus mattis molestie a iaculis at erat pellentesque.</p>
-                                        </figure>
-                                    </div>
-                                </Modal>
-                            </div>
+
+
+                            <img className='constel-page-img' onClick={() => this.handleShow('show2')} src={taurus} alt='' />
+                            <Modal show={this.state.show2} >
+                                <div className='backdrop' onClick={() => this.handleClose('show2')}>
+                                    <figure className='constel-modal'>
+                                        <Button className='close-modal' onClick={() => this.handleClose('show2')}>X</Button>
+                                        <img className='constel-modal-img' src={taurus} alt=''></img>
+                                        <h1> Taurus
+                                        <p className='constel-text'> Date of Birth: April 20 - May 20</p>
+                                        </h1>
+
+                                    </figure>
+                                </div>
+                            </Modal>
+
+                            <img className='constel-page-img' onClick={() => this.handleShow('show5')} src={leo} alt='' />
+                            <Modal show={this.state.show5} >
+                                <div className='backdrop' onClick={() => this.handleClose('show5')}>
+                                    <figure className='constel-modal'>
+                                        <Button className='close-modal' onClick={() => this.handleClose('show5')}>X</Button>
+                                        <img className='constel-modal-img' src={leo} alt=''></img>
+                                        <h1> Leo
+                                        <p className='constel-text'> Date of Birth: July 23 - August 22 </p>
+                                        </h1>
+                                    </figure>
+                                </div>
+                            </Modal>
+
+                            <img className='constel-page-img' onClick={() => this.handleShow('show8')} src={scorpio} alt='' />
+                            <Modal show={this.state.show8} >
+                                <div className='backdrop' onClick={() => this.handleClose('show8')}>
+                                    <figure className='constel-modal' >
+                                        <Button className='close-modal' onClick={() => this.handleClose('show8')}>X</Button>
+                                        <img className='constel-modal-img' src={scorpio} alt=''></img>
+                                        <h1> Scorpio
+                                        <p className='constel-text'> Date of Birth: October 24 - November 22 </p>
+                                        </h1>
+                                    </figure>
+                                </div>
+                            </Modal>
+
+
+                            <img className='constel-page-img' onClick={() => this.handleShow('show11')} src={aquarius} alt='' />
+                            <Modal show={this.state.show11} >
+                                <div className='backdrop' onClick={() => this.handleClose('show11')}>
+                                    <figure className='constel-modal' >
+                                        <Button className='close-modal' onClick={() => this.handleClose('show11')}>X</Button>
+                                        <img className='constel-modal-img' src={aquarius} alt=''></img>
+                                        <h1> Aquarius
+                                        <p className='constel-text'> Date of Birth: January 20 - February 18 </p>
+                                        </h1>
+                                    </figure>
+                                </div>
+                            </Modal>
                         </div>
 
                         <div className='constel-right-row'>
-                            <div >
-                                <button onClick={() => this.handleShow('show3')}> <img src={constel3} alt='constel3'></img></button>
-                                <Modal show={this.state.show3} >
-                                    <div className='backdrop' onClick={() => this.handleClose('show3')}>
-                                        <figure className='constel3-modal'>
-                                            <Button className='close-modal' onClick={() => this.handleClose('show3')}>X</Button>
-                                            <img className='constel3-modal-img' src={constel3} alt=''></img>
-                                            <p className='constel3-text'> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dui vivamus arcu felis bibendum ut tristique et egestas. Vel eros donec ac odio tempor orci. Sit amet risus nullam eget felis. Curabitur gravida arcu ac tortor dignissim convallis. Mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien. In iaculis nunc sed augue lacus viverra vitae. Gravida rutrum quisque non tellus. Eget nunc scelerisque viverra mauris in aliquam sem fringilla. Eget arcu dictum varius duis at consectetur lorem. Nisi est sit amet facilisis magna etiam tempor orci. Ante in nibh mauris cursus mattis molestie a iaculis. Non blandit massa enim nec dui nunc. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque. Mauris cursus mattis molestie a iaculis at erat pellentesque.</p>
-                                        </figure>
-                                    </div>
-                                </Modal>
-                            </div>
+
+                            <img className='constel-page-img' onClick={() => this.handleShow('show3')} src={gemini} alt='' />
+                            <Modal show={this.state.show3} >
+                                <div className='backdrop' onClick={() => this.handleClose('show3')}>
+                                    <figure className='constel-modal'>
+                                        <Button className='close-modal' onClick={() => this.handleClose('show3')}>X</Button>
+                                        <img className='constel-modal-img' src={gemini} alt=''></img>
+                                        <h1> Gemini
+                                        <p className='constel-text'> Date of Birth: May 21 - June 21</p>
+                                        </h1>
+                                    </figure>
+                                </div>
+                            </Modal>
+
+                            <img className='constel-page-img' onClick={() => this.handleShow('show6')} src={virgo} alt='' />
+                            <Modal show={this.state.show6} >
+                                <div className='backdrop' onClick={() => this.handleClose('show6')}>
+                                    <figure className='constel-modal'>
+                                        <Button className='close-modal' onClick={() => this.handleClose('show6')}>X</Button>
+                                        <img className='constel-modal-img' src={virgo} alt=''></img>
+                                        <h1> Virgo
+                                        <p className='constel-text'> Date of Birth: August 23 - September 22 </p>
+                                        </h1>
+                                    </figure>
+                                </div>
+                            </Modal>
+
+                            <img className='constel-page-img' onClick={() => this.handleShow('show9')} src={sagitarrius} alt='' />
+                            <Modal show={this.state.show9} >
+                                <div className='backdrop' onClick={() => this.handleClose('show9')}>
+                                    <figure className='constel-modal'>
+                                        <Button className='close-modal' onClick={() => this.handleClose('show9')}>X</Button>
+                                        <img className='constel-modal-img' src={sagitarrius} alt=''></img>
+                                        <h1> Sagittarius
+                                        <p className='constel-text'> Date of Birth: November 23 - December 21 </p>
+                                        </h1>
+                                    </figure>
+                                </div>
+                            </Modal>
+
+                            <img className='constel-page-img' onClick={() => this.handleShow('show12')} src={pisces} alt='' />
+                            <Modal show={this.state.show12} >
+                                <div className='backdrop' onClick={() => this.handleClose('show12')}>
+                                    <figure className='constel-modal' >
+                                        <Button className='close-modal' onClick={() => this.handleClose('show12')}>X</Button>
+                                        <img className='constel-modal-img' src={pisces} alt=''></img>
+                                        <h1> Pisces
+                                        <p className='constel-text'> Date of Birth: February 19 - March 20 </p>
+                                        </h1>
+                                    </figure>
+                                </div>
+                            </Modal>
+
+
                         </div>
                         Constellations
                     </figure>
