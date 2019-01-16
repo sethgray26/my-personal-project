@@ -28,16 +28,17 @@ export default class Constellations extends Component {
 
         this.state = {
             show1: false,
-            // show2: false
         };
     }
 
     handleClose(show) {
         this.setState({ [show]: false });
+        // window.scrollTo(50, 50)
     }
 
     handleShow(show) {
         this.setState({ [show]: true });
+        window.scrollTo(0, 0)
     }
 
     render() {
@@ -50,12 +51,14 @@ export default class Constellations extends Component {
 
                         <div className='constel-left-row'>
 
-
                             <img className='constel-page-img' onClick={() => this.handleShow('show1')} src={aries} alt='' />
                             <Modal show={this.state.show1} >
-                                <div className='backdrop' onClick={() => this.handleClose('show1')}>
+                                <div className='background'>
+                                    <div className='backdrop' onClick={() => this.handleClose('show1')}>
+                                    </div>
                                     <figure className='constel-modal' >
                                         <Button className='close-modal' onClick={() => this.handleClose('show1')}>X</Button>
+                                        <Button className='favorite-btn'> Favorite </Button>
                                         <img className='constel-modal-img' src={aries} alt=''></img>
                                         <h1> Aries
                                             <p className='constel-text'>Date of Birth: March 21 -April 19 </p>
@@ -67,7 +70,9 @@ export default class Constellations extends Component {
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show4')} src={cancer} alt='' />
                             <Modal show={this.state.show4} >
-                                <div className='backdrop' onClick={() => this.handleClose('show4')}>
+                                <div className='background'>
+                                    <div className='backdrop' onClick={() => this.handleClose('show4')}>
+                                    </div>
                                     <figure className='constel-modal' >
                                         <Button className='close-modal' onClick={() => this.handleClose('show4')}>X</Button>
                                         <img className='constel-modal-img' src={cancer} alt=''></img>
@@ -81,7 +86,9 @@ export default class Constellations extends Component {
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show7')} src={libra} alt='' />
                             <Modal show={this.state.show7} >
-                                <div className='backdrop' onClick={() => this.handleClose('show7')}>
+                                <div className='background'>
+                                    <div className='backdrop' onClick={() => this.handleClose('show7')}>
+                                    </div>
                                     <figure className='constel-modal' >
                                         <Button className='close-modal' onClick={() => this.handleClose('show7')}>X</Button>
                                         <img className='constel-modal-img' src={libra} alt=''></img>
@@ -94,7 +101,9 @@ export default class Constellations extends Component {
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show10')} src={capricorn} alt='' />
                             <Modal show={this.state.show10} >
-                                <div className='backdrop' onClick={() => this.handleClose('show10')}>
+                                <div className='background'>
+                                    <div className='backdrop' onClick={() => this.handleClose('show10')}>
+                                    </div>
                                     <figure className='constel-modal' >
                                         <Button className='close-modal' onClick={() => this.handleClose('show10')}>X</Button>
                                         <img className='constel-modal-img' src={capricorn} alt=''></img>
@@ -111,7 +120,9 @@ export default class Constellations extends Component {
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show2')} src={taurus} alt='' />
                             <Modal show={this.state.show2} >
-                                <div className='backdrop' onClick={() => this.handleClose('show2')}>
+                                <div className='background'>
+                                    <div className='backdrop' onClick={() => this.handleClose('show2')}>
+                                    </div>
                                     <figure className='constel-modal'>
                                         <Button className='close-modal' onClick={() => this.handleClose('show2')}>X</Button>
                                         <img className='constel-modal-img' src={taurus} alt=''></img>
@@ -125,7 +136,9 @@ export default class Constellations extends Component {
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show5')} src={leo} alt='' />
                             <Modal show={this.state.show5} >
-                                <div className='backdrop' onClick={() => this.handleClose('show5')}>
+                                <div className='background'>
+                                    <div className='backdrop' onClick={() => this.handleClose('show5')}>
+                                    </div>
                                     <figure className='constel-modal'>
                                         <Button className='close-modal' onClick={() => this.handleClose('show5')}>X</Button>
                                         <img className='constel-modal-img' src={leo} alt=''></img>
@@ -138,7 +151,9 @@ export default class Constellations extends Component {
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show8')} src={scorpio} alt='' />
                             <Modal show={this.state.show8} >
-                                <div className='backdrop' onClick={() => this.handleClose('show8')}>
+                                <div className='background'>
+                                    <div className='backdrop' onClick={() => this.handleClose('show8')}>
+                                    </div>
                                     <figure className='constel-modal' >
                                         <Button className='close-modal' onClick={() => this.handleClose('show8')}>X</Button>
                                         <img className='constel-modal-img' src={scorpio} alt=''></img>
@@ -152,7 +167,9 @@ export default class Constellations extends Component {
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show11')} src={aquarius} alt='' />
                             <Modal show={this.state.show11} >
-                                <div className='backdrop' onClick={() => this.handleClose('show11')}>
+                                <div className='background'>
+                                    <div className='backdrop' onClick={() => this.handleClose('show11')}>
+                                    </div>
                                     <figure className='constel-modal' >
                                         <Button className='close-modal' onClick={() => this.handleClose('show11')}>X</Button>
                                         <img className='constel-modal-img' src={aquarius} alt=''></img>
@@ -168,7 +185,9 @@ export default class Constellations extends Component {
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show3')} src={gemini} alt='' />
                             <Modal show={this.state.show3} >
-                                <div className='backdrop' onClick={() => this.handleClose('show3')}>
+                                <div className='background'>
+                                    <div className='backdrop' onClick={() => this.handleClose('show3')}>
+                                    </div>
                                     <figure className='constel-modal'>
                                         <Button className='close-modal' onClick={() => this.handleClose('show3')}>X</Button>
                                         <img className='constel-modal-img' src={gemini} alt=''></img>
@@ -181,7 +200,9 @@ export default class Constellations extends Component {
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show6')} src={virgo} alt='' />
                             <Modal show={this.state.show6} >
-                                <div className='backdrop' onClick={() => this.handleClose('show6')}>
+                                <div className='background'>
+                                    <div className='backdrop' onClick={() => this.handleClose('show6')}>
+                                    </div>
                                     <figure className='constel-modal'>
                                         <Button className='close-modal' onClick={() => this.handleClose('show6')}>X</Button>
                                         <img className='constel-modal-img' src={virgo} alt=''></img>
@@ -194,7 +215,9 @@ export default class Constellations extends Component {
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show9')} src={sagitarrius} alt='' />
                             <Modal show={this.state.show9} >
-                                <div className='backdrop' onClick={() => this.handleClose('show9')}>
+                                <div className='background'>
+                                    <div className='backdrop' onClick={() => this.handleClose('show9')}>
+                                    </div>
                                     <figure className='constel-modal'>
                                         <Button className='close-modal' onClick={() => this.handleClose('show9')}>X</Button>
                                         <img className='constel-modal-img' src={sagitarrius} alt=''></img>
@@ -207,7 +230,9 @@ export default class Constellations extends Component {
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show12')} src={pisces} alt='' />
                             <Modal show={this.state.show12} >
-                                <div className='backdrop' onClick={() => this.handleClose('show12')}>
+                                <div className='background'>
+                                    <div className='backdrop' onClick={() => this.handleClose('show12')}>
+                                    </div>
                                     <figure className='constel-modal' >
                                         <Button className='close-modal' onClick={() => this.handleClose('show12')}>X</Button>
                                         <img className='constel-modal-img' src={pisces} alt=''></img>
