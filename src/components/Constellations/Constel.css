@@ -10,14 +10,6 @@ body::-webkit-scrollbar{
     width:0px;
     height:0px;
 }
-#constellation-container{
-    height: 100%;
-    width: 60%;
-    background-color: #2B3550;
-    opacity: .4;
-    position: absolute;
-    margin-left: 20%;
-}
 
 .backdrop{
     position: fixed;

@@ -9,10 +9,10 @@ import './Navbar.css'
 export function Navbar(props) {
     return (
         <div>
-                <Link to='profile'>  <img src={props.profile_pic} alt='' /> </Link>
-                {props.username}
+            <Link to='profile'>  <img src={props.profile_pic} alt='' /> </Link>
+            {props.username}
             <div className='home_image'>
-            <Link to='homepage'> <img src={starhome2} alt='home-page'></img> </Link>
+                <Link to='homepage'> <img src={starhome2} alt='home-page'></img> </Link>
             </div>
             {/* <Link to='homepage'> <button> Home Page</button> </Link> */}
             <Link to='profile'> <button> Profile </button> </Link>

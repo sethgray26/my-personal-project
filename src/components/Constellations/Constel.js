@@ -6,7 +6,7 @@ import constel2 from '../../photos/constel2.jpg'
 import constel3 from '../../photos/constel3.jpg'
 
 import { Modal, Button } from 'react-bootstrap'
-import Particles from 'react-particles-js'
+// import Particles from 'react-particles-js'
 
 
 export default class Constellations extends Component {
@@ -22,11 +22,11 @@ export default class Constellations extends Component {
         };
     }
 
-    componentDidMount() {
-        var x = document.getElementsByTagName('canvas')[0]
-        console.log(x)
-        x.height = window.innerHeight
-    }
+    // componentDidMount() {
+    //     var x = document.getElementsByTagName('canvas')[0]
+    //     console.log(x)
+    //     x.height = window.innerHeight
+    // }
 
     handleClose(show) {
         this.setState({ [show]: false });
@@ -38,8 +38,8 @@ export default class Constellations extends Component {
 
     render() {
         return (
-            <mouse className='particles'>
-                <div>
+            <div>
+                <div className='particles'>
                     <Navbar />
 
                     <figure id='constellation-container'>
@@ -88,53 +88,9 @@ export default class Constellations extends Component {
                             </div>
                         </div>
                         Constellations
-                        <Particles
-                            params={{
-                                "particles": {
-                                    "number": {
-                                        "value": 900,
-                                        "density": {
-                                            "enable": true,
-                                            "value_area": 4000
-                                        }
-                                    },
-                                    "line_linked": {
-                                        "enable": true,
-                                        "opacity": 0.2
-                                    },
-                                    "move": {
-                                        'out_mode': 'out',
-                                        "direction": "bottom-left",
-                                        "speed": .5
-                                    },
-                                    "size": {
-                                        "value": 1.2
-                                    },
-                                    "opacity": {
-                                        "anim": {
-                                            "enable": true,
-                                            "speed": 3,
-                                            "opacity_min": 0.05
-                                        }
-                                    }
-                                },
-                                "interactivity": {
-                                    "events": {
-                                        "onclick": {
-                                            "enable": true,
-                                            "mode": "push"
-                                        }
-                                    },
-                                    "modes": {
-                                        "push": {
-                                            "particles_nb": 1
-                                        }
-                                    }
-                                }
-                            }} />
                     </figure>
-                </div >
-            </mouse>
+                </div>
+            </div >
         );
     }
 }
