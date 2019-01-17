@@ -23,7 +23,7 @@ class App extends Component {
             params={{
               "particles": {
                 "number": {
-                  "value": 100,
+                  "value": 120,
                   "density": {
                     "enable": true,
                     "value_area": 1000
@@ -47,7 +47,7 @@ class App extends Component {
                   "anim": {
                     "enable": true,
                     "speed": 3,
-                    "opacity_min": 0.05
+                    "opacity_min": 0.09
                   }
                 }
               },

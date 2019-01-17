@@ -51,6 +51,7 @@ export default class Constellations extends Component {
 
                         <div className='constel-left-row'>
 
+
                             <img className='constel-page-img' onClick={() => this.handleShow('show1')} src={aries} alt='' />
                             <Modal show={this.state.show1} >
                                 <div className='background'>

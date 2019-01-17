@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import { getUserData } from '../../ducks/reducer'
+import './Welcome.scss'
+
+
 
 class Welcome extends Component {
     constructor(props) {
@@ -33,22 +36,28 @@ class Welcome extends Component {
     render() {
         return (
             <div>
-                <p>
-                    <Link to='homepage'><button> Continue Without Logging In</button></Link>
-                </p>
-                <hr />
-                <p>
-                    <span> Username: </span>
-                    <input onChange={(e) => this.setState({ username: e.target.value })} />
-                </p>
-                <hr />
-                <p>
-                    <span> Password: </span>
-                    <input onChange={(e) => this.setState({ password: e.target.value })} />
-                </p>
-                <hr />
-                <button onClick={() => this.register()}> Register </button>
-                <button onClick={() => this.login()}> Login </button>
+
+                <div id='welcomeBox'>
+                    <p className='no-login'>
+                        <Link to='homepage'><button> Continue Without Logging In</button></Link>
+                    </p>
+                    <hr />
+                    <p className='username'>
+                        <span> Username: </span>
+                        <input onChange={(e) => this.setState({ username: e.target.value })} />
+                    </p>
+                    <hr />
+                    <p>
+                        <span> Password: </span>
+                        <input onChange={(e) => this.setState({ password: e.target.value })} />
+                    </p>
+                    <hr />
+                    <button onClick={() => this.register()}> Register </button>
+                    <button onClick={() => this.login()}> Login </button>
+
+                    
+                </div>
+
             </div>
         )
     }
@@ -57,3 +66,4 @@ class Welcome extends Component {
 
 
 export default connect(null, { getUserData })(Welcome)
+

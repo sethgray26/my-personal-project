@@ -1,5 +1,11 @@
+$font-white: antiquewhite;
+
+
 .particles {
     max-height: 100vh;
     height: 100%;
     overflow: hidden;
+}
+body{
+font: $font-white
 }

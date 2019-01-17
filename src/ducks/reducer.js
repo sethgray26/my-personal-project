@@ -1,7 +1,7 @@
 const initialState = {
     username: '',
     id: '',
-    profilePic: {}
+    profilePic: ''
 }
 
 export const GET_USER_DATA = 'GET_USER_DATA'

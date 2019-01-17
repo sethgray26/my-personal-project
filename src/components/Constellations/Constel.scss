@@ -13,7 +13,7 @@ $list1: $black, $dark-blue, $black;
 body{
     height:100vh;
     width: 100vw;
-    @include gradient(top, $list1)
+    @include gradient(top, $list1);
 }
 body::-webkit-scrollbar{
     width:0px;
@@ -21,7 +21,8 @@ body::-webkit-scrollbar{
 }
 
 .constel-page-img{
-    height: 19rem;
+    height: 32vh;
+    width: 28.1vw;
 }
 
 .backdrop{
@@ -107,9 +108,4 @@ h1{
     left: 68%;
     background-color: blue;
     position: absolute; 
-}
-body.modal-open{
-    overflow: hidden;
-    // position: fixed;
-    width: 100%;
 }

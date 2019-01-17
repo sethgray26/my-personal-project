@@ -1,0 +1,23 @@
+$font-white: #F2F3F4;
+
+
+
+#welcomeBox{
+    max-width: 10vw;
+    color: $font-white;
+    position: absolute;
+    left: 45vw;
+    top: 38vh;
+    align-content: center;
+}
+// button{
+//     border-radius: 2px;
+//     background-color: red;
+//     border: 1px red;
+// }
+button:hover{
+    background-color: blue;
+}
+// only send constel Id from sessions
+// in back end 
+// req.sessions.user_id

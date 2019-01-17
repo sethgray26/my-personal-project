@@ -2,9 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import starhome2 from '../../photos/starhome2.jpg'
-import './Navbar.css'
+import './Navbar.scss'
 
-// NEED TO GET USERS NAME AND PICTURE TO DISPLAY WHEN LOGGED In
 
 export function Navbar(props) {
     return (
