@@ -27,6 +27,8 @@ massive(CONNECTION_STRING).then((db) => {
 app.post('/welcome/register', controller.register)
 app.post('/welcome/login', controller.login)
 app.get('/api/profile', controller.userData)
+app.get('/api/favorites', controller.getFavorite)
+// app.post('/api/favorites', controller.addFavorite)
 app.get('/welcome/logout', (req, res) => {
     req.session.destroy();
     res.redirect('http://localhost:3000/#/')

@@ -19,52 +19,54 @@ class App extends Component {
       <div className="App">
         {routes}
         <div className='particles'>
-          <Particles
-            params={{
-              "particles": {
-                "number": {
-                  "value": 120,
-                  "density": {
+          <div className='darkCover'>
+            <Particles
+              params={{
+                "particles": {
+                  "number": {
+                    "value": 500,
+                    "density": {
+                      "enable": true,
+                      "value_area": 10000
+                    }
+                  },
+                  "line_linked": {
                     "enable": true,
-                    "value_area": 1000
+                    "opacity": .1,
+                    "bounce": false,
+                  },
+                  "move": {
+                    'out_mode': 'none',
+                    "direction": "none",
+                    "speed": 0,
+                    "bounce": false
+                  },
+                  "size": {
+                    "value": 3
+                  },
+                  "opacity": {
+                    "anim": {
+                      "enable": true,
+                      "speed": 4,
+                      "opacity_min": 0.09
+                    }
                   }
                 },
-                "line_linked": {
-                  "enable": true,
-                  "opacity": .1,
-                  "bounce": false,
-                },
-                "move": {
-                  'out_mode': 'out',
-                  "direction": "bottom",
-                  "speed": 1,
-                  "bounce": false
-                },
-                "size": {
-                  "value": 1
-                },
-                "opacity": {
-                  "anim": {
-                    "enable": true,
-                    "speed": 3,
-                    "opacity_min": 0.09
+                "interactivity": {
+                  "events": {
+                    "onclick": {
+                      "enable": true,
+                      "mode": "push"
+                    }
+                  },
+                  "modes": {
+                    "push": {
+                      "particles_nb": 1
+                    }
                   }
                 }
-              },
-              "interactivity": {
-                "events": {
-                  "onclick": {
-                    "enable": true,
-                    "mode": "push"
-                  }
-                },
-                "modes": {
-                  "push": {
-                    "particles_nb": 1
-                  }
-                }
-              }
-            }} />
+              }} />
+          </div>
         </div>
       </div>
     );

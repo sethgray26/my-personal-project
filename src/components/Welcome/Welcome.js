@@ -29,36 +29,33 @@ class Welcome extends Component {
         if (res.data.loggedIn) {
             this.props.history.push('/homepage')
         }
-        this.props.getUserData(res.data.userData.username, res.data.userData.id, res.data.userData.profile_pic)
+        this.props.getUserData(res.data.userData.username, res.data.userData.id, res.data.userData.profile_pic, res.data.userData.favorites)
     }
 
 
     render() {
         return (
             <div>
+                <div id='background' >
+                    <div id='welcomeBox'>
+                        <p className='continue'>
+                            <Link to='homepage'><button> Continue Without Logging In</button></Link>
+                        </p>
+                        <p className='username'>
+                            <span> Username: </span>
+                            <input onChange={(e) => this.setState({ username: e.target.value })} />
+                        </p>
+                        <p className='password'>
+                            <span> Password: </span>
+                            <input onChange={(e) => this.setState({ password: e.target.value })} />
+                        </p>
+                        <button className='register' onClick={() => this.register()}> Register </button>
+                        <button className='login' onClick={() => this.login()}> Login </button>
 
-                <div id='welcomeBox'>
-                    <p className='no-login'>
-                        <Link to='homepage'><button> Continue Without Logging In</button></Link>
-                    </p>
-                    <hr />
-                    <p className='username'>
-                        <span> Username: </span>
-                        <input onChange={(e) => this.setState({ username: e.target.value })} />
-                    </p>
-                    <hr />
-                    <p>
-                        <span> Password: </span>
-                        <input onChange={(e) => this.setState({ password: e.target.value })} />
-                    </p>
-                    <hr />
-                    <button onClick={() => this.register()}> Register </button>
-                    <button onClick={() => this.login()}> Login </button>
-
-                    
+                    </div>
                 </div>
 
-            </div>
+            </div >
         )
     }
 }

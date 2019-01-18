@@ -1,0 +1,43 @@
+app.put('pi/bio', (req, res) => {
+    const {bio} = req.body 
+    const db = req.app.get('db')
+    db.update_user({bio, id: req.session.user.id}).then(response => {
+    req.session.user.bio = respnose[0].bio
+    res.status(200).send(response[0].bio)
+})
+
+
+I need to add a bio to my user data base
+
+UPDATE users
+SET bio=${bio}
+WHERE id=${id}
+RETURNING *
+
+
+
+    
+this.state{
+bioInput: res.data.bio
+
+}
+
+updateBio = () => {
+    axios.put('/pi/bio, {bio: this.state.bioinput}).then( res => {
+        this.setState({bioinput: res.data})
+    })
+}
+
+<p> this.state.bio
+
+
+
+<mg src='this.props.'
+
+
+
+
+ComponentDidUpdate(prevProps){
+    if(pprevProbs.match. params.id !== this.props.match.params.id)
+    axios.get('/api')
+}

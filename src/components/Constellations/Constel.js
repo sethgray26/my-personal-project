@@ -3,19 +3,21 @@ import './Constel.scss'
 import Navbar from '../../components/Navbar/Navbar'
 
 import aries from '../../photos/aries.jpg'
-import scorpio from '../../photos/scorpio.png'
-import pisces from '../../photos/pisces.jpg'
-import virgo from '../../photos/virgo.png'
-import cancer from '../../photos/cancer.png'
-import sagitarrius from '../../photos/sagitarrius.jpg'
-import taurus from '../../photos/taurus.png'
-import aquarius from '../../photos/aquarius.jpg'
-import leo from '../../photos/leo.png'
-import libra from '../../photos/libra.jpg'
-import capricorn from '../../photos/capricorn.jpg'
+import taurus from '../../photos/taurus.jpg'
 import gemini from '../../photos/gemini.jpg'
+import cancer from '../../photos/cancer.jpg'
+import leo from '../../photos/leo.jpg'
+import virgo from '../../photos/virgo.jpg'
+import libra from '../../photos/libra.jpg'
+import scorpio from '../../photos/scorpio.png'
+import sagitarrius from '../../photos/sagitarrius.jpg'
+import capricorn from '../../photos/capricorn.jpg'
+import aquarius from '../../photos/aquarius.jpg'
+import pisces from '../../photos/pisces.jpg'
 
 import { Modal, Button } from 'react-bootstrap'
+import axios from 'axios';
+import constel_fave_render from './constel_fave_render';
 // import Particles from 'react-particles-js'
 
 
@@ -28,6 +30,7 @@ export default class Constellations extends Component {
 
         this.state = {
             show1: false,
+            faves: []
         };
     }
 
@@ -41,7 +44,21 @@ export default class Constellations extends Component {
         window.scrollTo(0, 0)
     }
 
+    addToFaves(faves) {
+        this.setState(({ faves: faves }))
+    }
+
+    // getFavorites = (user_id) => {
+    //     axios.get(`/api/favorites/${user_id}`).then(res => {
+    //         this.setstate({
+    //             faves: res.data
+    //         })
+    //     }
+    //     )
+    // }
+
     render() {
+        
         return (
             <div>
                 <div className='particles'>
@@ -59,7 +76,7 @@ export default class Constellations extends Component {
                                     </div>
                                     <figure className='constel-modal' >
                                         <Button className='close-modal' onClick={() => this.handleClose('show1')}>X</Button>
-                                        <Button className='favorite-btn'> Favorite </Button>
+                                        <Button className='favorite-btn' onClick={() => this.addToFaves('faves')}> Favorite </Button>
                                         <img className='constel-modal-img' src={aries} alt=''></img>
                                         <h1> Aries
                                             <p className='constel-text'>Date of Birth: March 21 -April 19 </p>
@@ -253,3 +270,11 @@ export default class Constellations extends Component {
         );
     }
 }
+
+
+
+
+
+
+
+

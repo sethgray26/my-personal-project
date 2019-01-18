@@ -1,3 +1,4 @@
-Select users.user_id,galaxy_id from users
-    JOIN galaxy_faves
-    ON users.user_id = galaxy_faves.galaxy_id
+select id, gf.user_id, galaxy_id from galaxy_faves gf
+JOIN users
+ON gf.user_id = users.user_id 
+WHERE  gf.user_id = ${id}
