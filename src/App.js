@@ -3,6 +3,7 @@ import './App.scss';
 import routes from './routes'
 
 import Particles from 'react-particles-js'
+import { yellow100 } from 'material-ui/styles/colors';
 
 
 
@@ -24,11 +25,14 @@ class App extends Component {
               params={{
                 "particles": {
                   "number": {
-                    "value": 500,
+                    "value": 700,
                     "density": {
                       "enable": true,
-                      "value_area": 10000
-                    }
+                      "value_area": 6000,
+                    },
+                  },
+                  "color": {
+                    "value": "#ffffb3"
                   },
                   "line_linked": {
                     "enable": true,
@@ -42,7 +46,7 @@ class App extends Component {
                     "bounce": false
                   },
                   "size": {
-                    "value": 3
+                    "value": 4
                   },
                   "opacity": {
                     "anim": {
@@ -54,14 +58,18 @@ class App extends Component {
                 },
                 "interactivity": {
                   "events": {
-                    "onclick": {
+                    "onhover": {
                       "enable": true,
-                      "mode": "push"
+                      "mode": "bubble"
                     }
                   },
                   "modes": {
-                    "push": {
-                      "particles_nb": 1
+                    // "push": {
+                    //   "particles_nb": 1
+                    // }
+                    "bubble": {
+                      "size": 10,
+                      "distance": 200
                     }
                   }
                 }

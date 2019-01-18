@@ -28,7 +28,14 @@ $font-white: #F2F3F4;
 .login{
     margin-left: 3vw;
 }
+button{
+    background-image: linear-gradient(rgb(161, 170, 214), rgb(76, 76, 248));
+    // background: transparent;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px
+}
 button:hover{
-    background-color: blue;
-    border: 2px, solid, red
+    background-image: linear-gradient(to bottom,rgb(181, 188, 219), rgb(76, 76, 248));
+    transition: .2s;
 }
