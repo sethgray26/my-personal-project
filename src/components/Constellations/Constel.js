@@ -17,7 +17,6 @@ import pisces from '../../photos/pisces.jpg'
 
 import { Modal, Button } from 'react-bootstrap'
 import axios from 'axios';
-import constel_fave_render from './constel_fave_render';
 // import Particles from 'react-particles-js'
 
 
@@ -30,9 +29,27 @@ export default class Constellations extends Component {
 
         this.state = {
             show1: false,
-            faves: []
+            faves: [],
+            constellations: []
         };
     }
+    componentDidMount(constel_id) {
+        axios.get(`/api/constellations/${constel_id}`).then(
+            res => {
+                this.setState({ constellations: res.data })
+            }
+        )
+        this.getConstellations()
+    }
+
+    
+    getConstellations = () => {
+        axios.get(`/api/constellations`).then(res => {
+            this.setState({ constellations: res.data })
+        }
+        )
+    }
+
 
     handleClose(show) {
         this.setState({ [show]: false });
@@ -48,17 +65,19 @@ export default class Constellations extends Component {
         this.setState(({ faves: faves }))
     }
 
-    // getFavorites = (user_id) => {
-    //     axios.get(`/api/favorites/${user_id}`).then(res => {
-    //         this.setstate({
-    //             faves: res.data
-    //         })
-    //     }
-    //     )
-    // }
 
     render() {
-        
+        console.log(this.state.constellations)
+        let displayConstel = this.state.constellations.map((constel, index) => {
+            return (
+                <div key={index}>
+                    <h1>
+                        {constel.constel_name}
+                    </h1>
+                    <img src={constel.constel_pic} />
+                </div>
+            )
+        })
         return (
             <div>
                 <div className='particles'>
@@ -68,7 +87,7 @@ export default class Constellations extends Component {
 
                         <div className='constel-left-row'>
 
-
+                            {displayConstel}
                             <img className='constel-page-img' onClick={() => this.handleShow('show1')} src={aries} alt='' />
                             <Modal show={this.state.show1} >
                                 <div className='background'>

@@ -10,18 +10,18 @@ import { yellow100 } from 'material-ui/styles/colors';
 
 class App extends Component {
 
-  componentDidMount() {
-    var x = document.getElementsByTagName('canvas')[0]
-    console.log(x)
-    x.height = window.innerHeight
-  }
+  // componentDidMount() {
+  //   var x = document.getElementsByTagName('canvas')[0]
+  //   console.log(x)
+  //   x.height = window.innerHeight
+  // }
   render() {
     return (
       <div className="App">
         {routes}
         <div className='particles'>
           <div className='darkCover'>
-            <Particles
+            {/* <Particles
               params={{
                 "particles": {
                   "number": {
@@ -66,19 +66,19 @@ class App extends Component {
                   "modes": {
                     // "push": {
                     //   "particles_nb": 1
-                    // }
+                    // },
                     "bubble": {
                       "size": 10,
                       "distance": 200
                     }
                   }
                 }
-              }} />
+              }} />  */}
+          </div>
           </div>
         </div>
-      </div>
-    );
-  }
-}
-
-export default App;
+        );
+      }
+    }
+    
+    export default App;

@@ -39,18 +39,29 @@ module.exports = {
         })
     },
     getFavorite: async (req, res) => {
+        const db = req.app.get('db')
+        console.log(req.session.user)
+        const constelFave = await db.constel_faves({ user_id: req.session.user.id })
+        res.status(200).send(constelFave)
+    },
+    getConstellation: async (req, res) => {
+        const db = req.app.get('db')
+        const getConstel = await db.get_constel({ user_id: req.session.user.id })
+        res.status(200).send(getConstel)
+    },
+    addFavorite: async (req, res) => {
         // const { username, constel_id, planet_id, galaxy_id } = req.body;
         const db = req.app.get('db')
         // const userArr = await db.constel_faves({ username: username })
         console.log(req.session.user)
         const constelFave = await db.constel_faves({ user_id: req.session.user.id })
-        // const planetFave = await db.planet_faves({ user_id: user_id, planet_id: planet_id })
-        // const galaxyFave = await db.galaxy_faves({ user_id: user_id, galaxy_id: galaxy_id })
+        const planetFave = await db.planet_faves({ user_id: req.session.user.id })
+        const galaxyFave = await db.galaxy_faves({ user_id: req.session.user.id })
         // req.session.user = {
         //     id: userArr[0].user_id, constel_id: constelFave[0].constel_id, planet_id: planetFave[0].planet_id,
         //     galaxy_id: galaxyFave[0].galaxy_id
         // }
-        res.status(200).send(constelFave)
+        res.status(200).send(constelFave, planetFave, galaxyFave)
     },
     userData: (req, res) => {
         if (req.session.user) {

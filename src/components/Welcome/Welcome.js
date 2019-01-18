@@ -43,11 +43,11 @@ class Welcome extends Component {
                         </p>
                         <p className='username'>
                             <span> Username: </span>
-                            <input onChange={(e) => this.setState({ username: e.target.value })} />
+                            <input className='user-input' onChange={(e) => this.setState({ username: e.target.value })} />
                         </p>
                         <p className='password'>
                             <span> Password: </span>
-                            <input onChange={(e) => this.setState({ password: e.target.value })} />
+                            <input className='pass-input' onChange={(e) => this.setState({ password: e.target.value })} />
                         </p>
                         <button className='register' onClick={() => this.register()}> Register </button>
                         <button className='login' onClick={() => this.login()}> Login </button>

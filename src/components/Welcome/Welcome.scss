@@ -19,14 +19,22 @@ $font-white: #F2F3F4;
 .username{
     margin-left: 1.2vw;
 }
+.user-input{
+    width: 9.6vw;
+}
 .password{
     margin-left: 1.2vw;
 }
+.pass-input{
+    width: 9.6vw;
+}
 .register{
     margin-left: 1.2vw;
+    width: 3.62vw;
 }
 .login{
-    margin-left: 3vw;
+    margin-left: 2.6vw;
+    width: 3.62vw;
 }
 button{
     background-image: linear-gradient(rgb(161, 170, 214), rgb(76, 76, 248));
