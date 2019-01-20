@@ -1,0 +1,12 @@
+.displayGalaxies{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+    align-content: stretch;
+}
+.galaxy_pic{
+    height: 32vh;
+    width: 28.1vw;
+}

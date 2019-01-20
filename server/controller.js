@@ -45,9 +45,23 @@ module.exports = {
         res.status(200).send(constelFave)
     },
     getConstellation: async (req, res) => {
+        const { constel_id } = req.params
         const db = req.app.get('db')
-        const getConstel = await db.get_constel({ user_id: req.session.user.id })
+        console.log(req.params)
+        const getConstel = await db.get_constel({ constel_id: constel_id })
         res.status(200).send(getConstel)
+    },
+    getPlanets: async (req, res) => {
+        const { planet_id } = req.params;
+        const db = req.app.get('db')
+        const getPlanet = await db.get_planets({ planet_id })
+        res.status(200).send(getPlanet)
+    },
+    getGalaxies: async (req, res) => {
+        const { galaxy_id } = req.params;
+        const db = req.app.get('db')
+        const getGalaxy = await db.get_galaxy({ galaxy_id })
+        res.status(200).send(getGalaxy)
     },
     addFavorite: async (req, res) => {
         // const { username, constel_id, planet_id, galaxy_id } = req.body;

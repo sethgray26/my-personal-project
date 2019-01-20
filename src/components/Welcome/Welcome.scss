@@ -1,40 +1,93 @@
 $font-white: #F2F3F4;
+$silver: silver;
+$right-silver: #d9d9d9;
+
+$list2: $silver, $right-silver;
+
+@mixin gradient($direction, $list) {
+    background: -webkit-linear-gradient($direction, $list);
+    background: -moz-linear-gradient($direction, $list);
+    background: -o-linear-gradient($direction, $list);
+    background: linear-gradient($direction, $list)
+}
+
+@font-face{
+    font-family: 'Orbitron', sans-serif;
+font-family: 'Audiowide', cursive;
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Orbitron');
+}
 
 
 #welcomeBox{
-    height: 24vh;
-    max-width: 12vw;
+    height: 30vh;
+    width: 28vw;
     color: $font-white;
     position: absolute;
-    left: 45vw;
-    top: 38vh;
+    left: 35vw;
+    top: 35vh;
     align-content: center;
     align-items: center;
+    border-radius: 30px;
     background-color: rgb(0, 0, 0);
-    opacity: 1;
+    opacity: .78;
 }
-.continue{
-    margin-left: 1.2vw;
+
+.starChart{
+    font-size: 22vh;
+    margin-top: 2%;
+    margin-left: 20%;
+    font-family: 'orbitron';
+    background: -webkit-linear-gradient(#3366ff,silver, #3366ff,);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    // @include gradient(right, $list2)
 }
+
+
 .username{
-    margin-left: 1.2vw;
+    margin-left: 10.8vw;
+    position: relative;
+    top: 3vh;
+    padding-top: 100vh;
+    // margin-left: vw;
 }
 .user-input{
-    width: 9.6vw;
+    position: absolute;
+    margin-top: 6vh;
+    margin-left: -7.7vw;
+    width: 11.8vw;
 }
 .password{
-    margin-left: 1.2vw;
+    // margin-left: 22vw;
+    margin-top: 8vh;
+    margin-left: 12.2vw;
 }
 .pass-input{
-    width: 9.6vw;
+    position: absolute;
+    margin-top: 3vh;
+    margin-left: -7.6vw;
+    width: 11.8vw;
 }
 .register{
-    margin-left: 1.2vw;
-    width: 3.62vw;
+    height: 3vh;
+    margin-top: 9.3vh;
+    margin-left: 1.7vw;
+    width: 4.6vw;
 }
 .login{
+    height: 3vh;
     margin-left: 2.6vw;
-    width: 3.62vw;
+    width: 3.7vw;
+}
+.continue{
+    height: 10vh;
+    margin-left: 1.2vw;
+}
+.continue-btn{
+    position: absolute;
+    left: 16.5vw;
+    top: 23.6vh;
+    height: 3vh;
 }
 button{
     background-image: linear-gradient(rgb(161, 170, 214), rgb(76, 76, 248));

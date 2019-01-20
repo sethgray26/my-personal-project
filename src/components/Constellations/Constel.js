@@ -17,7 +17,7 @@ import pisces from '../../photos/pisces.jpg'
 
 import { Modal, Button } from 'react-bootstrap'
 import axios from 'axios';
-// import Particles from 'react-particles-js'
+import Particles from 'react-particles-js'
 
 
 export default class Constellations extends Component {
@@ -42,9 +42,11 @@ export default class Constellations extends Component {
         this.getConstellations()
     }
 
-    
+
+
     getConstellations = () => {
         axios.get(`/api/constellations`).then(res => {
+            console.log(res.data)
             this.setState({ constellations: res.data })
         }
         )
@@ -74,20 +76,20 @@ export default class Constellations extends Component {
                     <h1>
                         {constel.constel_name}
                     </h1>
-                    <img src={constel.constel_pic} />
+                    <img className='constel_pic_img' src={constel.constel_pic} />
                 </div>
             )
         })
         return (
             <div>
-                <div className='particles'>
-                    <Navbar />
-
-                    <figure id='constellation-container'>
+                <Navbar />
+                {/* <div className='particles'> */}
+                <figure id='constellation-container'>
+                    <div id='displayConstel'>
+                        {/* {displayConstel} */}
 
                         <div className='constel-left-row'>
 
-                            {displayConstel}
                             <img className='constel-page-img' onClick={() => this.handleShow('show1')} src={aries} alt='' />
                             <Modal show={this.state.show1} >
                                 <div className='background'>
@@ -283,8 +285,9 @@ export default class Constellations extends Component {
 
                         </div>
                         Constellations
-                    </figure>
-                </div>
+                    </div>
+                </figure>
+                {/* </div> */}
             </div >
         );
     }

@@ -9,7 +9,24 @@ $list1: $black, $dark-blue, $black;
     background: -o-linear-gradient($direction, $list);
     background: linear-gradient($direction, $list)
 }
-
+.particles{
+    position: absolute;
+    top: 0;
+    z-index: -10;
+    overflow: hidden;
+    // right: 0;
+    // left: 0;
+    // width: 100vw;
+    // height: 100vh;
+}
+.constel_pic_img{
+    height: 32vh;
+    width: 28.1vw;
+}
+#displayConstel{
+    height: 100%;
+    width: 100%
+}
 body{
     height:100vh;
     width: 100vw;
@@ -21,7 +38,7 @@ body::-webkit-scrollbar{
 }
 
 .constel-page-img{
-    height: 32vh;
+    height: 33vh;
     width: 28.1vw;
 }
 
@@ -31,8 +48,9 @@ body::-webkit-scrollbar{
     left: 0px;
     width: 100vw;
     height: 100vh;
-    // z-index: 9998;
+    z-index: 9998;
     background: rgba(0, 0, 0, 0.6);
+    // z-index: 9999999;
 }
 .background{
     position: fixed;
@@ -40,7 +58,7 @@ body::-webkit-scrollbar{
     left: 0px;
     width: 100vw;
     height: 100vh;
-    // z-index: 9998;
+    z-index: 99999;
     background: rgba(0, 0, 0, 0.6);
 }
 .constel-modal{
@@ -52,7 +70,8 @@ body::-webkit-scrollbar{
     @include gradient(top, $list1);
     -webkit-box-shadow: 1px 2px 8px 2px rgba(0,0,0,0.5); 
     box-shadow: 1px 2px 8px 2px rgba(0,0,0,0.5);
-    overflow: scroll
+    overflow: scroll;
+    z-index: 999999999;
 }
 .constel-modal::-webkit-scrollbar{
     overflow: scroll;
@@ -68,11 +87,13 @@ body::-webkit-scrollbar{
     padding-top: .5%;
     padding-bottom: .5%;
     padding-left: 21.5%;
+    z-index: 999999999;
 }
 
 .close-modal{
     left: 74.89%;
     position: fixed;
+    z-index: 999999999;
 }
 .constel-text{
     font-size: 1.2rem;
@@ -88,24 +109,27 @@ h1{
     // opacity: .2;
 }
 .constel-left-row{
-    height: 133.5%;
-    width: 28.1%;
-    left: 3%;
+    height: 133.5vh;
+    // height: 120vh;
+    width: 28.1vw;
+    left: 3vw;
     background-color: red;
     position: absolute
 }
 
 .constel-middle-row{
-    height: 133.5%;
-    width: 28.1%;
-    left: 35.5%;
+    height: 133.5vh;
+    // height: 120vh;
+    width: 28.1vw;
+    left: 35.5vw;
     background-color: antiquewhite;
     position: absolute
 }
 .constel-right-row{
-    height: 133.5%;
-    width: 28.1%;
-    left: 68%;
+    height: 133.5vh;
+    // height: 120vh;
+    width: 28.1vw;
+    left: 68vw;
     background-color: blue;
     position: absolute; 
 }

@@ -37,20 +37,21 @@ class Welcome extends Component {
         return (
             <div>
                 <div id='background' >
+                    <span >
+                        <h1 className='starChart'>
+                            Star Chart
+                    </h1>
+                    </span>
                     <div id='welcomeBox'>
-                        <p className='continue'>
-                            <Link to='homepage'><button> Continue Without Logging In</button></Link>
-                        </p>
-                        <p className='username'>
-                            <span> Username: </span>
-                            <input className='user-input' onChange={(e) => this.setState({ username: e.target.value })} />
-                        </p>
+                        <Link className='continue' to='homepage'><button className='continue-btn'> Continue Without Logging In</button></Link>
+                        <span className='username'> Username: </span>
+                        <input className='user-input' onChange={(e) => this.setState({ username: e.target.value })} />
                         <p className='password'>
                             <span> Password: </span>
-                            <input className='pass-input' onChange={(e) => this.setState({ password: e.target.value })} />
+                            <input className='pass-input' type='password' onChange={(e) => this.setState({ password: e.target.value })} />
                         </p>
                         <button className='register' onClick={() => this.register()}> Register </button>
-                        <button className='login' onClick={() => this.login()}> Login </button>
+                        <button className='login' onClick={() => this.login()} > Login </button>
 
                     </div>
                 </div>
