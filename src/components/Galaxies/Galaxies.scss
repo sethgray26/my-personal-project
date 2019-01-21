@@ -1,3 +1,13 @@
+.backgroundImage{
+	background-image: url(https://i.pinimg.com/originals/6b/7d/3b/6b7d3ba6caad663fa1ba0402b927d428.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 160vh;
+    width: 100vw;
+    background-color: black;
+    opacity: .99;
+}
+
 .displayGalaxies{
 	display: flex;
 	flex-direction: row;

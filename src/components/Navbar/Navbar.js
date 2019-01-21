@@ -9,7 +9,7 @@ export function Navbar(props) {
     return (
         <div className='navBar'>
             <div>
-                <Link to='profile'>  <img src={props.profile_pic} alt='' /> </Link>
+                <Link to='profile'>  <img className='profilePic' src={props.profile_pic} alt='' /> </Link>
                 {props.username}
                 <div className='home_image'>
                     <Link to='homepage'> <img src={starhome2} alt='home-page'></img> </Link>

@@ -59,12 +59,14 @@ export default class Galaxies extends Component {
             )
         })
         return (
-            <div>
-                <Navbar />
-                <div className='displayGalaxies'>
-                {displayGalaxies}
-                </div>
-                Galaxies
+            <div className='backgroundImage'>
+                <div>
+                    <Navbar />
+                    <div className='displayGalaxies'>
+                        {displayGalaxies}
+                    </div>
+                    Galaxies
+            </div>
             </div>
         )
     }

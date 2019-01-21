@@ -1,3 +1,13 @@
+.backgroundImagePlanet{
+	background-image: url(https://www.youredm.com/wp-content/uploads/2014/10/Earth-From-Space-Space-1080x1920.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 160vh;
+    width: 100vw;
+    background-color: black;
+    opacity: .99;
+}
+
 .displayPlanets{
 	display: flex;
 	flex-direction: row;

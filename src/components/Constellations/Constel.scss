@@ -9,6 +9,9 @@ $list1: $black, $dark-blue, $black;
     background: -o-linear-gradient($direction, $list);
     background: linear-gradient($direction, $list)
 }
+modal{
+    position: fixed;
+}
 .particles{
     position: absolute;
     top: 0;
@@ -81,12 +84,16 @@ body::-webkit-scrollbar{
 }
 
 .constel-modal-img{
-    float: left;
-    height: 68%;
-    padding-right: .5%;
-    padding-top: .5%;
-    padding-bottom: .5%;
-    padding-left: 21.5%;
+    // float: left;
+    height: 35vh;
+    width: 50vw;
+    // margin-left: 10vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: stretch;
     z-index: 999999999;
 }
 
@@ -97,13 +104,22 @@ body::-webkit-scrollbar{
 }
 .constel-text{
     font-size: 1.2rem;
+    margin-top: 8vh;
     color: antiquewhite;
     float: left;
 }
-h1{
+.constel-descript{
     font-size: 1.2rem;
+    margin-top: -1vh;
     color: antiquewhite;
     float: left;
+}
+.constel-name{
+    position: absolute;
+    font-size: 1.5rem;
+    margin-left: 23vw;
+    color: antiquewhite;
+    // float: left;
 }
 .button{
     // opacity: .2;
