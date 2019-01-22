@@ -18,24 +18,13 @@ font-family: 'Audiowide', cursive;
 }
 
 
-#welcomeBox{
-    height: 30vh;
-    width: 28vw;
-    color: $font-white;
-    position: absolute;
-    left: 35vw;
-    top: 35vh;
-    align-content: center;
-    align-items: center;
-    border-radius: 30px;
-    background-color: rgb(0, 0, 0);
-    opacity: .78;
-}
 
 .starChart{
     font-size: 22vh;
-    margin-top: 2%;
-    margin-left: 20%;
+    margin-top: 0;
+    margin-bottom: 0;
+    // margin-left: 20rem;
+    justify-content: space-around;
     font-family: 'orbitron';
     background: -webkit-linear-gradient(#3366ff,silver, #3366ff,);
     -webkit-background-clip: text;
@@ -43,13 +32,30 @@ font-family: 'Audiowide', cursive;
     // @include gradient(right, $list2)
 }
 
+#welcomeBox{
+    height: 24vh;
+    width: 25vw;
+    color: $font-white;
+    margin: 8vh auto;
+    position: absolute;
+    top: 30vh;
+    left: 37vw;
+    align-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: rgb(0, 0, 0);
+    opacity: .78;
+}
+
+
+
 
 .username{
-    margin-left: 10.8vw;
+    // margin-left: 10.8vw;
     position: relative;
-    top: 3vh;
-    padding-top: 100vh;
-    // margin-left: vw;
+    // padding-top: 100vh;
+    margin: 1vh;
+    margin-left: 10vw;
 }
 .user-input{
     position: absolute;
@@ -58,9 +64,9 @@ font-family: 'Audiowide', cursive;
     width: 11.8vw;
 }
 .password{
-    // margin-left: 22vw;
+    position: relative;
     margin-top: 8vh;
-    margin-left: 12.2vw;
+    margin-left: 10vw;
 }
 .pass-input{
     position: absolute;
@@ -85,13 +91,12 @@ font-family: 'Audiowide', cursive;
 }
 .continue-btn{
     position: absolute;
-    left: 16.5vw;
-    top: 23.6vh;
+    left: 14.5vw;
+    top: 25.1vh;
     height: 3vh;
 }
 button{
     background-image: linear-gradient(rgb(161, 170, 214), rgb(76, 76, 248));
-    // background: transparent;
     height: 3vh;
     // width: 5vw;
     border: none;

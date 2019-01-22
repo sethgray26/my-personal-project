@@ -33,8 +33,8 @@ export default class Constellations extends Component {
             constellations: []
         };
     }
-    componentDidMount(constel_id) {
-        axios.get(`/api/constellations/${constel_id}`).then(
+    componentDidMount() {
+        axios.get(`/api/constellations`).then(
             res => {
                 this.setState({ constellations: res.data })
             }
@@ -84,7 +84,6 @@ export default class Constellations extends Component {
 
 
     render() {
-        console.log(this.state.constellations)
         let displayConstel = this.state.constellations.map((constel, index) => {
             return (
                 <div key={index}>
@@ -95,8 +94,9 @@ export default class Constellations extends Component {
                 </div>
             )
         })
+        
         return (
-            
+
             <div>
                 <Navbar />
                 {/* <div className='particles'> */}
@@ -107,7 +107,7 @@ export default class Constellations extends Component {
                         <div className='constel-left-row'>
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show1')} src={aries} alt='' />
-                            <Modal show={this.state.show1}>
+                            <Modal className='modalWindow' show={this.state.show1}>
                                 <div className='background'>
                                     <div className='backdrop' onClick={() => this.handleClose('show1')}>
                                     </div>
@@ -126,7 +126,7 @@ export default class Constellations extends Component {
 
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show4')} src={cancer} alt='' />
-                            <Modal show={this.state.show4} >
+                            <Modal className='modalWindow' show={this.state.show4} >
                                 <div className='background'>
                                     <div className='backdrop' onClick={() => this.handleClose('show4')}>
                                     </div>
@@ -145,7 +145,7 @@ export default class Constellations extends Component {
 
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show7')} src={libra} alt='' />
-                            <Modal show={this.state.show7} >
+                            <Modal className='modalWindow' show={this.state.show7} >
                                 <div className='background'>
                                     <div className='backdrop' onClick={() => this.handleClose('show7')}>
                                     </div>
@@ -163,7 +163,7 @@ export default class Constellations extends Component {
                             </Modal>
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show10')} src={capricorn} alt='' />
-                            <Modal show={this.state.show10} >
+                            <Modal className='modalWindow' show={this.state.show10} >
                                 <div className='background'>
                                     <div className='backdrop' onClick={() => this.handleClose('show10')}>
                                     </div>
@@ -186,7 +186,7 @@ export default class Constellations extends Component {
 
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show2')} src={taurus} alt='' />
-                            <Modal show={this.state.show2} >
+                            <Modal className='modalWindow' show={this.state.show2} >
                                 <div className='background'>
                                     <div className='backdrop' onClick={() => this.handleClose('show2')}>
                                     </div>
@@ -205,7 +205,7 @@ export default class Constellations extends Component {
                             </Modal>
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show5')} src={leo} alt='' />
-                            <Modal show={this.state.show5} >
+                            <Modal className='modalWindow' show={this.state.show5} >
                                 <div className='background'>
                                     <div className='backdrop' onClick={() => this.handleClose('show5')}>
                                     </div>
@@ -225,7 +225,7 @@ export default class Constellations extends Component {
                             </Modal>
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show8')} src={scorpio} alt='' />
-                            <Modal show={this.state.show8} >
+                            <Modal className='modalWindow' show={this.state.show8} >
                                 <div className='background'>
                                     <div className='backdrop' onClick={() => this.handleClose('show8')}>
                                     </div>
@@ -245,7 +245,7 @@ export default class Constellations extends Component {
 
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show11')} src={aquarius} alt='' />
-                            <Modal show={this.state.show11} >
+                            <Modal className='modalWindow' show={this.state.show11} >
                                 <div className='background'>
                                     <div className='backdrop' onClick={() => this.handleClose('show11')}>
                                     </div>
@@ -268,7 +268,7 @@ export default class Constellations extends Component {
                         <div className='constel-right-row'>
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show3')} src={gemini} alt='' />
-                            <Modal show={this.state.show3} >
+                            <Modal className='modalWindow' show={this.state.show3} >
                                 <div className='background'>
                                     <div className='backdrop' onClick={() => this.handleClose('show3')}>
                                     </div>
@@ -287,7 +287,7 @@ export default class Constellations extends Component {
                             </Modal>
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show6')} src={virgo} alt='' />
-                            <Modal show={this.state.show6} >
+                            <Modal className='modalWindow' show={this.state.show6} >
                                 <div className='background'>
                                     <div className='backdrop' onClick={() => this.handleClose('show6')}>
                                     </div>
@@ -306,7 +306,7 @@ export default class Constellations extends Component {
                             </Modal>
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show9')} src={sagitarrius} alt='' />
-                            <Modal show={this.state.show9} >
+                            <Modal className='modalWindow' show={this.state.show9} >
                                 <div className='background'>
                                     <div className='backdrop' onClick={() => this.handleClose('show9')}>
                                     </div>
@@ -326,7 +326,7 @@ export default class Constellations extends Component {
                             </Modal>
 
                             <img className='constel-page-img' onClick={() => this.handleShow('show12')} src={pisces} alt='' />
-                            <Modal show={this.state.show12} >
+                            <Modal className='modalWindow' show={this.state.show12} >
                                 <div className='background'>
                                     <div className='backdrop' onClick={() => this.handleClose('show12')}>
                                     </div>

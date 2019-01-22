@@ -16,6 +16,8 @@ app.use(session({
     saveUninitialized: false
 }))
 
+
+
 massive(CONNECTION_STRING).then((db) => {
     app.set('db', db)
     app.listen(SERVER_PORT, () => {
@@ -27,7 +29,12 @@ massive(CONNECTION_STRING).then((db) => {
 app.post('/welcome/register', controller.register)
 app.post('/welcome/login', controller.login)
 app.get('/api/profile', controller.userData)
+
 app.get('/api/favorites', controller.getFavorite)
+
+app.get('/api/bio', controller.getBio)
+
+app.put('/api/bio', controller.updateBio)
 
 app.get('/api/constellations', controller.getConstellation)
 app.get('/api/planets', controller.getPlanets)

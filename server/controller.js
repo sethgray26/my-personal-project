@@ -38,12 +38,32 @@ module.exports = {
             }, loggedIn: true
         })
     },
+
+    updateBio: async (req, res) => {
+        const { updateBio } = req.body
+        const db = req.app.get('db')
+        // req.session.user = { user_id: user_id }
+        const bioUpdate = await db.update_bio({ bio: updateBio, user_id: req.session.user.id })
+        req.session.user.bio = bioUpdate[0].bio
+        res.status(200).send(req.session.user.bio)
+    },
+
+    // cannot do a req.body on a get request as a get does not have a body
+
+    getBio: async (req, res) => {
+        const db = req.app.get('db')
+        const userBio = await db.get_bio({ user_id: req.session.user.id })
+        // req.session.user = { bio: userBio[0].bio }
+        res.status(200).send(userBio)
+    },
+
     getFavorite: async (req, res) => {
         const db = req.app.get('db')
         console.log(req.session.user)
         const constelFave = await db.constel_faves({ user_id: req.session.user.id })
         res.status(200).send(constelFave)
     },
+
     getConstellation: async (req, res) => {
         const { constel_id } = req.params
         const db = req.app.get('db')
@@ -51,30 +71,28 @@ module.exports = {
         const getConstel = await db.get_constel({ constel_id: constel_id })
         res.status(200).send(getConstel)
     },
+
     getPlanets: async (req, res) => {
         const { planet_id } = req.params;
         const db = req.app.get('db')
         const getPlanet = await db.get_planets({ planet_id })
         res.status(200).send(getPlanet)
     },
+
     getGalaxies: async (req, res) => {
         const { galaxy_id } = req.params;
         const db = req.app.get('db')
         const getGalaxy = await db.get_galaxy({ galaxy_id })
         res.status(200).send(getGalaxy)
     },
+
     addFavorite: async (req, res) => {
-        // const { username, constel_id, planet_id, galaxy_id } = req.body;
         const db = req.app.get('db')
-        // const userArr = await db.constel_faves({ username: username })
         console.log(req.session.user)
         const constelFave = await db.constel_faves({ user_id: req.session.user.id })
         const planetFave = await db.planet_faves({ user_id: req.session.user.id })
         const galaxyFave = await db.galaxy_faves({ user_id: req.session.user.id })
-        // req.session.user = {
-        //     id: userArr[0].user_id, constel_id: constelFave[0].constel_id, planet_id: planetFave[0].planet_id,
-        //     galaxy_id: galaxyFave[0].galaxy_id
-        // }
+
         res.status(200).send(constelFave, planetFave, galaxyFave)
     },
     userData: (req, res) => {

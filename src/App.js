@@ -3,7 +3,7 @@ import './App.scss';
 import routes from './routes'
 
 import Particles from 'react-particles-js'
-import { yellow100 } from 'material-ui/styles/colors';
+// import { yellow100 } from 'material-ui/styles/colors';
 
 
 
@@ -18,11 +18,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className='welcomeSpace'>
-          {routes}
-          <div className='particles'>
-            <div className='darkCover'>
-              {/* <Particles
+        {routes}
+        <div className='particles'>
+          <div className='darkCover'>
+            {/* <Particles
                 params={{
                   "particles": {
                     "number": {
@@ -75,9 +74,9 @@ class App extends Component {
                     }
                   }
                 }} /> */}
-            </div>
           </div>
         </div>
+      </div>
       // </div>
     );
   }

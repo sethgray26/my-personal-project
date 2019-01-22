@@ -9,7 +9,7 @@ $list1: $black, $dark-blue, $black;
     background: -o-linear-gradient($direction, $list);
     background: linear-gradient($direction, $list)
 }
-modal{
+.modalWindow{
     position: fixed;
 }
 .particles{

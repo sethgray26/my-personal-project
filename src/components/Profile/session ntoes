@@ -41,3 +41,38 @@ ComponentDidUpdate(prevProps){
     if(pprevProbs.match. params.id !== this.props.match.params.id)
     axios.get('/api')
 }
+
+
+
+
+
+
+
+
+
+
+
+const { NODE_ENV} = process.env
+
+
+
+
+app.user( async (req, res, next ) => {
+    if(NODE_ENV === 'development'){
+ const db = req.app.get('db')
+ const userData = await db.set_data()
+ req.session.user = userData[0]
+ next()
+    } else {
+        next()
+    }
+})
+
+
+
+
+
+
+
+
+

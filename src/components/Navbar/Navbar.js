@@ -8,6 +8,7 @@ import './Navbar.scss'
 export function Navbar(props) {
     return (
         <div className='navBar'>
+                    <h1 className='homeStarChart'> Star Chart </h1>
             <div>
                 <Link to='profile'>  <img className='profilePic' src={props.profile_pic} alt='' /> </Link>
                 {props.username}

@@ -5,56 +5,35 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import scorpio from '../../photos/scorpio.png'
 import constel1 from '../../photos/constel1.jpg'
-import planet1 from '../../photos/planet1.jpg'
+import planet1 from '../../photos/planet1.webp'
 import galaxy1 from '../../photos/galaxy1.jpg'
 
-import Slider from 'react-slick'
 import { Carousel } from 'react-responsive-carousel';
+import './Homepage.scss'
 
 
 export default class HomePage extends Component {
-    constructor(props, context) {
-        super(props, context);
-
-        this.handleSelect = this.handleSelect.bind(this);
-
-        this.state = {
-            index: 0,
-            direction: null
-        };
-    }
-
-    handleSelect(selectedIndex, e) {
-        alert(`selected=${selectedIndex}, direction=${e.direction}`);
-        this.setState({
-            index: selectedIndex,
-            direction: e.direction
-        });
-    }
-
-
     render() {
 
         return (
             <div>
                 <Navbar />
-                <Carousel>
-                    <div>
-                        <img src={constel1} />
-                        <p className="legend">Legend 1</p>
-                    </div>
-                    <div>
-                        <img src={planet1} />
-                        <p className="legend">Legend 2</p>
-                    </div>
-                    <div>
-                        <img src={galaxy1} />
-                        <p className="legend">Legend 3</p>
-                    </div>
-                </Carousel>
-                );
-            }
-        };
+                <div id='carousel'>
+                    <Carousel >
+                        <div>
+                            <img src={constel1} />
+                            <p className="legend"> Navigate The Stars </p>
+                        </div>
+                        <div>
+                            <img src={planet1} />
+                            <p className="legend"> Explore Planets </p>
+                        </div>
+                        <div>
+                            <img src={galaxy1} />
+                            <p className="legend"> Discover Galaxies </p>
+                        </div>
+                    </Carousel>
+                </div>
                 {/* <Link to=''> <img src='' alt=''></img> </Link>
                 {/* <Link to='constellations'> <img src={constel1} alt='constel1'></img> </Link> */}
                 {/* hello pt 1 */}

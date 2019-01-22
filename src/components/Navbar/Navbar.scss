@@ -1,3 +1,20 @@
+@font-face{
+    font-family: 'Orbitron', sans-serif;
+font-family: 'Audiowide', cursive;
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Orbitron');
+}
+
+.homeStarChart{
+    position: absolute;
+    font-size: 4vh;
+    margin-top: 0vh;
+    margin-left: -70vw;
+    font-family: 'orbitron';
+    background: -webkit-linear-gradient(#3366ff,silver, #3366ff,);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    // @include gradient(right, $list2)
+}
 .home_image {
     position: relative;
     width: 50px;
