@@ -10,18 +10,18 @@ import Particles from 'react-particles-js'
 
 class App extends Component {
 
-  // componentDidMount() {
-  //   var x = document.getElementsByTagName('canvas')[0]
-  //   console.log(x)
-  //   x.height = window.innerHeight
-  // }
+  componentDidMount() {
+    var x = document.getElementsByTagName('canvas')[0]
+    console.log(x)
+    x.height = window.innerHeight
+  }
   render() {
     return (
       <div className="App">
         {routes}
         <div className='particles'>
           <div className='darkCover'>
-            {/* <Particles
+            <Particles
                 params={{
                   "particles": {
                     "number": {
@@ -73,7 +73,7 @@ class App extends Component {
                       }
                     }
                   }
-                }} /> */}
+                }} />
           </div>
         </div>
       </div>
