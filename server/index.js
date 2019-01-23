@@ -31,17 +31,15 @@ app.post('/welcome/login', controller.login)
 app.get('/api/profile', controller.userData)
 
 app.get('/api/favorites', controller.getFavorite)
-// app.put('/api/favorites', controller.addFavorite)
+app.post('/api/favorites', controller.addFavorite)
 
 app.get('/api/bio', controller.getBio)
-
 app.put('/api/bio', controller.updateBio)
 
 app.get('/api/constellations', controller.getConstellation)
 app.get('/api/planets', controller.getPlanets)
 app.get('/api/galaxies', controller.getGalaxies)
 
-// app.post('/api/favorites', controller.addFavorite)
 app.get('/welcome/logout', (req, res) => {
     req.session.destroy();
     res.redirect('http://localhost:3000/#/')

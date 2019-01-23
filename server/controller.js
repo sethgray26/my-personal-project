@@ -42,18 +42,16 @@ module.exports = {
     updateBio: async (req, res) => {
         const { updateBio } = req.body
         const db = req.app.get('db')
-        // req.session.user = { user_id: user_id }
         const bioUpdate = await db.update_bio({ bio: updateBio, user_id: req.session.user.id })
         req.session.user.bio = bioUpdate[0].bio
         res.status(200).send(req.session.user.bio)
     },
 
-    // cannot do a req.body on a get request as a get does not have a body
 
+    // cannot do a req.body on a get request as a get does not have a body
     getBio: async (req, res) => {
         const db = req.app.get('db')
         const userBio = await db.get_bio({ user_id: req.session.user.id })
-        // req.session.user = { bio: userBio[0].bio }
         res.status(200).send(userBio)
     },
 
@@ -84,17 +82,21 @@ module.exports = {
     getFavorite: async (req, res) => {
         console.log('asdfasdf', req.session.user)
         const db = req.app.get('db')
-        const constelFave = await db.constel_faves({ user_id: 3 })
-        // const galaxyFave = await db.galaxy_faves({ user_id: 3 })
-        // const planetFave = await db.planet_faves({ user_id: 3 })
-        res.status(200).send(constelFave)
+        const constelFave = await db.constel_faves({ user_id: req.session.user.id })
+        // const galaxyFave = await db.galaxy_faves({ user_id: req.session.user.id })
+        // const planetFave = await db.planet_faves({ user_id: req.session.user.id })
+
+        res.status(200).send(constelFave, galaxyFave, planetFave)
     },
 
-    // addFavorite: async (req, res) => {
-    //     const db = req.app.get('db')
-    //     const faves = db.favorites()
-    //     res.status(200).send(faves)
-    // },
+    addFavorite: async (req, res) => {
+        console.log(req.session.user)
+        const db = req.app.get('db')
+        // const faves = db.favorites()
+        const addFave = db.add_favorite()
+        // req.session.user.
+        res.status(200).send(addFave)
+    },
 
     userData: (req, res) => {
         if (req.session.user) {

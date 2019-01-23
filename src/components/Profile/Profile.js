@@ -23,8 +23,13 @@ export class Profile extends Component {
         })
     }
 
+    addFavorite() {
+        axios.post(`/api/favorites`).then(res => {
+            this.setState({ faves: res.data })
+        })
+    }
 
-    
+
     render() {
         console.log(this.state.faves)
         let displayFaves = this.state.faves.map((fave, index) => {
