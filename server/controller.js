@@ -57,12 +57,7 @@ module.exports = {
         res.status(200).send(userBio)
     },
 
-    getFavorite: async (req, res) => {
-        const db = req.app.get('db')
-        console.log(req.session.user)
-        const constelFave = await db.constel_faves({ user_id: req.session.user.id })
-        res.status(200).send(constelFave)
-    },
+
 
     getConstellation: async (req, res) => {
         const { constel_id } = req.params
@@ -86,15 +81,21 @@ module.exports = {
         res.status(200).send(getGalaxy)
     },
 
-    addFavorite: async (req, res) => {
+    getFavorite: async (req, res) => {
+        console.log('asdfasdf', req.session.user)
         const db = req.app.get('db')
-        console.log(req.session.user)
-        const constelFave = await db.constel_faves({ user_id: req.session.user.id })
-        const planetFave = await db.planet_faves({ user_id: req.session.user.id })
-        const galaxyFave = await db.galaxy_faves({ user_id: req.session.user.id })
-
-        res.status(200).send(constelFave, planetFave, galaxyFave)
+        const constelFave = await db.constel_faves({ user_id: 3 })
+        // const galaxyFave = await db.galaxy_faves({ user_id: 3 })
+        // const planetFave = await db.planet_faves({ user_id: 3 })
+        res.status(200).send(constelFave)
     },
+
+    // addFavorite: async (req, res) => {
+    //     const db = req.app.get('db')
+    //     const faves = db.favorites()
+    //     res.status(200).send(faves)
+    // },
+
     userData: (req, res) => {
         if (req.session.user) {
             res.status(200).send(req.session.user)

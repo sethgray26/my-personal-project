@@ -31,6 +31,7 @@ app.post('/welcome/login', controller.login)
 app.get('/api/profile', controller.userData)
 
 app.get('/api/favorites', controller.getFavorite)
+// app.put('/api/favorites', controller.addFavorite)
 
 app.get('/api/bio', controller.getBio)
 

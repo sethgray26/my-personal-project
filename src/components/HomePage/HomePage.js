@@ -29,7 +29,7 @@ export default class HomePage extends Component {
                             <p className="legend"> Explore Planets </p>
                         </div>
                         <div>
-                            <img src={galaxy1} />
+                            <img src={galaxy1}  />
                             <p className="legend"> Discover Galaxies </p>
                         </div>
                     </Carousel>

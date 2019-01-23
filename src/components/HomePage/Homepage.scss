@@ -1,8 +1,13 @@
 #carousel{
-    max-width: 80vw;
-max-height: 30vh;
+    max-width: 90vw;
+    margin-left: 5vw;
 }
-
+.slider-wrapper{
+    height: 29vh;
+}
+.thumb{
+    // height: 6vh;
+}
 .slider-wrapper axis-horizontal{
     width: 3vw;
     height: 3vh;
