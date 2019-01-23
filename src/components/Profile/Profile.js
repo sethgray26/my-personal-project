@@ -3,13 +3,15 @@ import Navbar from '../../components/Navbar/Navbar'
 import { connect } from 'react-redux'
 import axios from 'axios';
 import ProfileBio from './ProfileBio'
+import ConstelOne from '../Constellations/constelOne'
 
 
 export class Profile extends Component {
     constructor(props, res) {
         super(props, res)
         this.state = {
-            faves: []
+            constelFaves: [],
+
         }
     }
     componentDidMount() {
@@ -19,27 +21,23 @@ export class Profile extends Component {
 
     getFavorites = () => {
         axios.get(`/api/favorites`).then(res => {
-            this.setState({ faves: res.data })
+            this.setState({ constelFaves: res.data })
         })
     }
 
-    addFavorite() {
-        axios.post(`/api/favorites`).then(res => {
-            this.setState({ faves: res.data })
+
+    deleteFromFaves(constel_id) {
+        axios.delete(`/api/favorites/constel/${constel_id}`).then(res => {
+            this.setState({ constelFaves: res.data })
         })
     }
 
 
     render() {
-        console.log(this.state.faves)
-        let displayFaves = this.state.faves.map((fave, index) => {
+        console.log(this.state.constelFaves)
+        let displayFaves = this.state.constelFaves.map((constel, index) => {
             return (
-                <div key={index}>
-                    <h1>
-                        {fave.constel_name}
-                    </h1>
-                    <img src={fave.constel_pic} />
-                </div>
+                <ConstelOne key={index} constel={constel} profile={true} deleteFromFaves={() => this.deleteFromFaves(constel.constel_id)} />
             )
         })
         return (

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './Constel.scss'
 import Navbar from '../../components/Navbar/Navbar'
+import ConstelOne from './constelOne'
 
 import aries from '../../photos/aries.jpg'
 import taurus from '../../photos/taurus.jpg'
@@ -53,6 +54,7 @@ export default class Constellations extends Component {
     }
 
 
+
     handleClose(show) {
         this.setState({ [show]: false });
         // window.scrollTo(50, 50)
@@ -66,8 +68,7 @@ export default class Constellations extends Component {
     addToFaves(faves) {
         this.setState(({ faves: faves }))
     }
-
-    modalStyle = () => {
+    alStyle = () => {
 
         return {
             position: 'fixed',
@@ -84,17 +85,13 @@ export default class Constellations extends Component {
 
 
     render() {
+        console.log(this.state.constellations)
         let displayConstel = this.state.constellations.map((constel, index) => {
             return (
-                <div key={index}>
-                    <h1>
-                        {constel.constel_name}
-                    </h1>
-                    <img className='constel_pic_img' src={constel.constel_pic} />
-                </div>
+                <ConstelOne key={index} constel={constel} />
             )
         })
-        
+
         return (
 
             <div>
@@ -102,11 +99,11 @@ export default class Constellations extends Component {
                 {/* <div className='particles'> */}
                 <figure id='constellation-container'>
                     <div id='displayConstel'>
-                        {/* {displayConstel} */}
 
                         <div className='constel-left-row'>
+                            {displayConstel}
 
-                            <img className='constel-page-img' onClick={() => this.handleShow('show1')} src={aries} alt='' />
+                            {/* <img className='constel-page-img' onClick={() => this.handleShow('show1')} src={aries} alt='' />
                             <Modal className='modalWindow' show={this.state.show1}>
                                 <div className='background'>
                                     <div className='backdrop' onClick={() => this.handleClose('show1')}>
@@ -119,13 +116,13 @@ export default class Constellations extends Component {
                                         <hr />
                                         </h1>
                                         <p className='constel-text'>Date of Birth: March 21 -April 19</p>
-                                        <p className='constel-descript'> Best visible at 21:00 (9 p.m.) during the month of December. Aries is one of the constellations of the zodiac. It is located in the northern celestial hemisphere between Pisces to the west and Taurus to the east. The name Aries is Latin for ram, and its symbol is (♈), representing a ram's horns.</p>
+                                        <p className='constel-descript'> {constel.description} </p>
                                     </figure>
                                 </div>
-                            </Modal>
+                            </Modal> */}
 
 
-                            <img className='constel-page-img' onClick={() => this.handleShow('show4')} src={cancer} alt='' />
+                            {/* <img className='constel-page-img' onClick={() => this.handleShow('show4')} src={cancer} alt='' />
                             <Modal className='modalWindow' show={this.state.show4} >
                                 <div className='background'>
                                     <div className='backdrop' onClick={() => this.handleClose('show4')}>
@@ -141,10 +138,10 @@ export default class Constellations extends Component {
                                           In astrology, Cancer is the cardinal sign of the Water trigon, which is made up of Cancer, Pisces, and Scorpio. It is not considered a negative sign, whose domicile, or ruling planet, is the Moon. Though some depictions of Cancer feature a lobster, the sign is most often represented by the crab, also a woman by the ocean has been depicted near based on the Karkinos, a giant crab that harassed Hercules, during his fight with the Hydra.</p>
                                     </figure>
                                 </div>
-                            </Modal>
+                            </Modal> */}
 
 
-                            <img className='constel-page-img' onClick={() => this.handleShow('show7')} src={libra} alt='' />
+                            {/* <img className='constel-page-img' onClick={() => this.handleShow('show7')} src={libra} alt='' />
                             <Modal className='modalWindow' show={this.state.show7} >
                                 <div className='background'>
                                     <div className='backdrop' onClick={() => this.handleClose('show7')}>
@@ -160,9 +157,9 @@ export default class Constellations extends Component {
                                             Libra (♎) is the seventh astrological sign in the Zodiac. It spans 180°–210° celestial longitude. Under the tropical zodiac, the Sun transits this area on average between (northern autumnal equinox) September 23 and October 23 and under the sidereal zodiac, the sun currently transits the constellation of Libra from approximately October 31 to November 22. The symbol of the scales is based on the Scales of Justice held by Themis, the Greek personification of divine law and custom. She became the inspiration for modern depictions of Lady Justice. The ruling planet of Libra is Venus.Libra and aquarius are the only zodiac constellations in the sky represented by inanimate objects.The other eleven signs are represented either as an animal or mythological characters throughout history.</p>
                                     </figure>
                                 </div>
-                            </Modal>
+                            </Modal> */}
 
-                            <img className='constel-page-img' onClick={() => this.handleShow('show10')} src={capricorn} alt='' />
+                            {/* <img className='constel-page-img' onClick={() => this.handleShow('show10')} src={capricorn} alt='' />
                             <Modal className='modalWindow' show={this.state.show10} >
                                 <div className='background'>
                                     <div className='backdrop' onClick={() => this.handleClose('show10')}>
@@ -176,10 +173,10 @@ export default class Constellations extends Component {
                                         <p className='constel-text'> Date of Birth: December 22 - January 19 </p>
                                         <p className='constel-descript'>
                                             Capricorn (♑) is the tenth astrological sign in the zodiac, originating from the constellation of Capricornus, the horned goat. It spans the 270–300th degree of the zodiac, corresponding to celestial longitude. Under the tropical zodiac, the sun transits this area from about December 21 to January 21 the following year, and under the sidereal zodiac, the sun transits the constellation of Capricorn from approximately January 16 to February 16. In astrology, Capricorn is considered an earth sign, negative sign, and one of the four cardinal signs. Capricorn is said to be ruled by the planet Saturn. In Vedic Astrology Capricorn was associated with the Crocodile but modern astrologers consider Capricorn as Sea goat. Its symbol is based on the Sumerians' primordial god of wisdom and waters, Enki, with the head and upper body of a goat and the lower body and tail of a fish. Later known as Ea in Akkadian and Babylonian mythology, Enki was the god of intelligence, creation, crafts; magic; water, seawater and lakewater.
-                                        </p>
-                                    </figure>
-                                </div>
-                            </Modal>
+                                        </p> */}
+                            {/* </figure> */}
+                            {/* </div>
+                            </Modal> */}
                         </div>
 
                         <div className='constel-middle-row'>

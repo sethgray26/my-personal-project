@@ -83,19 +83,40 @@ module.exports = {
         console.log('asdfasdf', req.session.user)
         const db = req.app.get('db')
         const constelFave = await db.constel_faves({ user_id: req.session.user.id })
-        // const galaxyFave = await db.galaxy_faves({ user_id: req.session.user.id })
         // const planetFave = await db.planet_faves({ user_id: req.session.user.id })
+        // const galaxyFave = await db.galaxy_faves({ user_id: req.session.user.id })
 
-        res.status(200).send(constelFave, galaxyFave, planetFave)
+        res.status(200).send(constelFave)
+        // , galaxyFave, planetFave)
     },
 
-    addFavorite: async (req, res) => {
-        console.log(req.session.user)
+    addConstelFave: async (req, res) => {
+        const { constel_id } = req.body
+        // const { id } = req.session.user
         const db = req.app.get('db')
-        // const faves = db.favorites()
-        const addFave = db.add_favorite()
-        // req.session.user.
-        res.status(200).send(addFave)
+        const addConstelFave = await db.add_constel_fave({ user_id: 3, constel_id: constel_id })
+        const favorites = await db.constel_faves({ user_id: 3 })
+        console.log(favorites)
+        res.status(200).send(favorites)
+    },
+
+    deleteConstelFave: async (req, res) => {
+        const { constel_id } = req.params
+        const { id } = req.session.user
+        const db = req.app.get('db')
+        const deleteConstelFave = await db.delete_constel_fave({ constel_id: +constel_id, user_id: 3 })
+        const favorites = await db.constel_faves({ user_id: 3 })
+        res.status(200).send(favorites)
+    },
+
+    addPlanetFave: async (req, res) => {
+        const { planet_id } = req.body
+        // const { id } = req.session.user
+        const db = req.app.get('db')
+        const addPlanetFave = await db.add_planet_fave({ user_id: 3, planet_id: planet_id })
+        const favorites = await db.planet_faves({ user_id: 3 })
+        console.log(favorites)
+        res.status(200).send(favorites)
     },
 
     userData: (req, res) => {
