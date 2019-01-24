@@ -4,7 +4,8 @@
 
 
 
-select id, pf.user_id, planet_id from planet_faves pf
-JOIN users
-ON pf.user_id = users.user_id 
-WHERE  pf.user_id = ${id}
+SELECT * from planets p
+JOIN planet_faves pf
+ON p.planet_id = pf.planet_id
+WHERE user_id = ${user_id}
+

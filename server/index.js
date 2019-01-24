@@ -36,6 +36,7 @@ app.post('/api/favorites/constel', controller.addConstelFave)
 app.delete(`/api/favorites/constel/:constel_id`, controller.deleteConstelFave)
 
 app.post('/api/favorites/planet', controller.addPlanetFave)
+app.delete(`/api/favorites/planet/:planet_id`, controller.deletePlanetFave)
 
 app.get('/api/bio', controller.getBio)
 app.put('/api/bio', controller.updateBio)

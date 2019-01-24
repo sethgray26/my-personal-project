@@ -83,19 +83,19 @@ module.exports = {
         console.log('asdfasdf', req.session.user)
         const db = req.app.get('db')
         const constelFave = await db.constel_faves({ user_id: req.session.user.id })
-        // const planetFave = await db.planet_faves({ user_id: req.session.user.id })
+        const planetFave = await db.planet_faves({ user_id: req.session.user.id })
         // const galaxyFave = await db.galaxy_faves({ user_id: req.session.user.id })
 
-        res.status(200).send(constelFave)
+        res.status(200).send([constelFave, planetFave])
         // , galaxyFave, planetFave)
     },
 
     addConstelFave: async (req, res) => {
         const { constel_id } = req.body
-        // const { id } = req.session.user
+        const { id } = req.session.user
         const db = req.app.get('db')
-        const addConstelFave = await db.add_constel_fave({ user_id: 3, constel_id: constel_id })
-        const favorites = await db.constel_faves({ user_id: 3 })
+        const addConstelFave = await db.add_constel_fave({ user_id: id, constel_id: constel_id })
+        const favorites = await db.constel_faves({ user_id: id })
         console.log(favorites)
         res.status(200).send(favorites)
     },
@@ -104,8 +104,8 @@ module.exports = {
         const { constel_id } = req.params
         const { id } = req.session.user
         const db = req.app.get('db')
-        const deleteConstelFave = await db.delete_constel_fave({ constel_id: +constel_id, user_id: 3 })
-        const favorites = await db.constel_faves({ user_id: 3 })
+        const deleteConstelFave = await db.delete_constel_fave({ constel_id: +constel_id, user_id: id })
+        const favorites = await db.constel_faves({ user_id: id })
         res.status(200).send(favorites)
     },
 
@@ -116,6 +116,15 @@ module.exports = {
         const addPlanetFave = await db.add_planet_fave({ user_id: 3, planet_id: planet_id })
         const favorites = await db.planet_faves({ user_id: 3 })
         console.log(favorites)
+        res.status(200).send(favorites)
+    },
+
+    deletePlanetFave: async (req, res) => {
+        const { planet_id } = req.params
+        const { id } = req.session.user
+        const db = req.app.get('db')
+        const deletePlanetFave = await db.delete_planet_fave({ planet_id: +planet_id, user_id: id })
+        const favorites = await db.planet_faves({ user_id: id })
         res.status(200).send(favorites)
     },
 

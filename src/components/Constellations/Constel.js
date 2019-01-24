@@ -68,19 +68,19 @@ export default class Constellations extends Component {
     addToFaves(faves) {
         this.setState(({ faves: faves }))
     }
-    alStyle = () => {
+    // alStyle = () => {
 
-        return {
-            position: 'fixed',
-            width: 400,
-            zIndex: 1040,
+    //     return {
+    //         position: 'fixed',
+    //         width: 400,
+    //         zIndex: 1040,
 
-            border: '1px solid #e5e5e5',
-            backgroundColor: 'white',
-            boxShadow: '0 5px 15px rgba(0,0,0,.5)',
-            padding: 20
-        };
-    };
+    //         border: '1px solid #e5e5e5',
+    //         backgroundColor: 'white',
+    //         boxShadow: '0 5px 15px rgba(0,0,0,.5)',
+    //         padding: 20
+    //     };
+    // };
 
 
 
@@ -102,81 +102,6 @@ export default class Constellations extends Component {
 
                         <div className='constel-left-row'>
                             {displayConstel}
-
-                            {/* <img className='constel-page-img' onClick={() => this.handleShow('show1')} src={aries} alt='' />
-                            <Modal className='modalWindow' show={this.state.show1}>
-                                <div className='background'>
-                                    <div className='backdrop' onClick={() => this.handleClose('show1')}>
-                                    </div>
-                                    <figure className='constel-modal' >
-                                        <Button className='close-modal' onClick={() => this.handleClose('show1')}>X</Button>
-                                        <Button className='favorite-btn' onClick={() => this.addToFaves('faves')}> Favorite </Button>
-                                        <img className='constel-modal-img' src={aries} alt=''></img>
-                                        <h1 className='constel-name'> Aries
-                                        <hr />
-                                        </h1>
-                                        <p className='constel-text'>Date of Birth: March 21 -April 19</p>
-                                        <p className='constel-descript'> {constel.description} </p>
-                                    </figure>
-                                </div>
-                            </Modal> */}
-
-
-                            {/* <img className='constel-page-img' onClick={() => this.handleShow('show4')} src={cancer} alt='' />
-                            <Modal className='modalWindow' show={this.state.show4} >
-                                <div className='background'>
-                                    <div className='backdrop' onClick={() => this.handleClose('show4')}>
-                                    </div>
-                                    <figure className='constel-modal' >
-                                        <Button className='close-modal' onClick={() => this.handleClose('show4')}>X</Button>
-                                        <img className='constel-modal-img' src={cancer} alt=''></img>
-                                        <h1 className='constel-name'> Cancer
-                                        <hr />
-                                        </h1>
-                                        <p className='constel-text'>Date of Birth: May 21 - June 21</p>
-                                        <p className='constel-descript'> Cancer (♋️) is the fourth astrological sign in the Zodiac, originating from the constellation of Cancer. It spans 90° and 120° celestial longitude. Under the tropical zodiac, the Sun transits this area between approximately June 21 and July 23, and under the sidereal zodiac, the Sun transits this area between approximately July 16 and August 15.
-                                          In astrology, Cancer is the cardinal sign of the Water trigon, which is made up of Cancer, Pisces, and Scorpio. It is not considered a negative sign, whose domicile, or ruling planet, is the Moon. Though some depictions of Cancer feature a lobster, the sign is most often represented by the crab, also a woman by the ocean has been depicted near based on the Karkinos, a giant crab that harassed Hercules, during his fight with the Hydra.</p>
-                                    </figure>
-                                </div>
-                            </Modal> */}
-
-
-                            {/* <img className='constel-page-img' onClick={() => this.handleShow('show7')} src={libra} alt='' />
-                            <Modal className='modalWindow' show={this.state.show7} >
-                                <div className='background'>
-                                    <div className='backdrop' onClick={() => this.handleClose('show7')}>
-                                    </div>
-                                    <figure className='constel-modal' >
-                                        <Button className='close-modal' onClick={() => this.handleClose('show7')}>X</Button>
-                                        <img className='constel-modal-img' src={libra} alt=''></img>
-                                        <h1 className='constel-name'> Libra
-                                        <hr />
-                                        </h1>
-                                        <p className='constel-text'> Date of Birth: September 23 - October 23 </p>
-                                        <p className='constel-descript'>
-                                            Libra (♎) is the seventh astrological sign in the Zodiac. It spans 180°–210° celestial longitude. Under the tropical zodiac, the Sun transits this area on average between (northern autumnal equinox) September 23 and October 23 and under the sidereal zodiac, the sun currently transits the constellation of Libra from approximately October 31 to November 22. The symbol of the scales is based on the Scales of Justice held by Themis, the Greek personification of divine law and custom. She became the inspiration for modern depictions of Lady Justice. The ruling planet of Libra is Venus.Libra and aquarius are the only zodiac constellations in the sky represented by inanimate objects.The other eleven signs are represented either as an animal or mythological characters throughout history.</p>
-                                    </figure>
-                                </div>
-                            </Modal> */}
-
-                            {/* <img className='constel-page-img' onClick={() => this.handleShow('show10')} src={capricorn} alt='' />
-                            <Modal className='modalWindow' show={this.state.show10} >
-                                <div className='background'>
-                                    <div className='backdrop' onClick={() => this.handleClose('show10')}>
-                                    </div>
-                                    <figure className='constel-modal' >
-                                        <Button className='close-modal' onClick={() => this.handleClose('show10')}>X</Button>
-                                        <img className='constel-modal-img' src={capricorn} alt=''></img>
-                                        <h1 className='constel-name'> Capricorn
-                                        <hr />
-                                        </h1>
-                                        <p className='constel-text'> Date of Birth: December 22 - January 19 </p>
-                                        <p className='constel-descript'>
-                                            Capricorn (♑) is the tenth astrological sign in the zodiac, originating from the constellation of Capricornus, the horned goat. It spans the 270–300th degree of the zodiac, corresponding to celestial longitude. Under the tropical zodiac, the sun transits this area from about December 21 to January 21 the following year, and under the sidereal zodiac, the sun transits the constellation of Capricorn from approximately January 16 to February 16. In astrology, Capricorn is considered an earth sign, negative sign, and one of the four cardinal signs. Capricorn is said to be ruled by the planet Saturn. In Vedic Astrology Capricorn was associated with the Crocodile but modern astrologers consider Capricorn as Sea goat. Its symbol is based on the Sumerians' primordial god of wisdom and waters, Enki, with the head and upper body of a goat and the lower body and tail of a fish. Later known as Ea in Akkadian and Babylonian mythology, Enki was the god of intelligence, creation, crafts; magic; water, seawater and lakewater.
-                                        </p> */}
-                            {/* </figure> */}
-                            {/* </div>
-                            </Modal> */}
                         </div>
 
                         <div className='constel-middle-row'>
