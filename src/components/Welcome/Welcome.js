@@ -42,18 +42,26 @@ class Welcome extends Component {
                             Star Chart
                     </h1>
                     </span>
+
                     <div id='welcomeBox'>
+
                         <div className='username'>
                             <span > Username: </span>
                             <input className='user-input' onChange={(e) => this.setState({ username: e.target.value })} />
                         </div>
+
                         <div className='password'>
                             <span > Password: </span>
                             <input className='pass-input' type='password' onChange={(e) => this.setState({ password: e.target.value })} />
                         </div>
-                        <button className='register' onClick={() => this.register()}> Register </button>
-                        <button className='login' onClick={() => this.login()} > Login </button>
-                        <Link className='continue' to='homepage'><button className='continue-btn'> Continue Without Logging In</button></Link>
+
+                        <div className='register-login'>
+                            <button className='register' onClick={() => this.register()}> Register </button>
+                            <button className='login' onClick={() => this.login()} > Login </button>
+                        </div>
+                        <div className='continue'>
+                            <Link to='homepage'><button className='continue-btn'> Continue Without Logging In</button></Link>
+                        </div>
 
                     </div>
                 </div>

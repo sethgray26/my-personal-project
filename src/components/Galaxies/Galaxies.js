@@ -1,7 +1,97 @@
+// import React, { Component } from 'react'
+// import './Galaxies.scss'
+// import Navbar from '../../components/Navbar/Navbar'
+// import axios from 'axios'
+
+
+
+
+
+
+// export default class Galaxies extends Component {
+//     constructor(props, context) {
+//         super(props, context);
+//         this.handleShow = this.handleShow.bind(this)
+//         this.handleClose = this.handleClose.bind(this)
+//         this.state = {
+//             show1: false,
+//             faves: [],
+//             galaxies: []
+//         }
+//     }
+//     componentDidMount(galaxy_id) {
+//         axios.get(`/api/galaxies/${galaxy_id}`).then(
+//             res => {
+//                 this.setState({ galaxies: res.data })
+//             }
+//         )
+//         this.getGalaxies()
+//     }
+
+//     getGalaxies = () => {
+//         axios.get(`/api/galaxies`).then(res => {
+//             console.log(res.data)
+//             this.setState({ galaxies: res.data })
+//         }
+//         )
+//     }
+
+//     handleClose(show) {
+//         this.setState({ [show]: false });
+//         // window.scrollTo(50, 50)
+//     }
+//     handleShow(show) {
+//         this.setState({ [show]: true });
+//         window.scrollTo(0, 0)
+//     }
+
+
+
+//     render() {
+//         let displayGalaxies = this.state.galaxies.map((galaxy, index) => {
+//             return (
+//                 <div key={index}>
+//                     <h1>
+//                         {galaxy.galaxy_name}
+//                     </h1>
+//                     <img className='galaxy_pic' src={galaxy.galaxy_pic} />
+//                 </div>
+//             )
+//         })
+//         return (
+//             <div className='backgroundImage'>
+//                 <div>
+//                     <Navbar />
+//                     <div className='displayGalaxies'>
+//                         {displayGalaxies}
+//                     </div>
+//                     Galaxies
+//             </div>
+//             </div>
+//         )
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { Component } from 'react'
 import './Galaxies.scss'
 import Navbar from '../../components/Navbar/Navbar'
+import GalaxyOne from './GalaxyOne'
+
 import axios from 'axios'
+import { Modal, Button } from 'react-bootstrap'
+
 
 
 
@@ -11,16 +101,18 @@ import axios from 'axios'
 export default class Galaxies extends Component {
     constructor(props, context) {
         super(props, context);
+
         this.handleShow = this.handleShow.bind(this)
         this.handleClose = this.handleClose.bind(this)
+
         this.state = {
             show1: false,
             faves: [],
             galaxies: []
         }
     }
-    componentDidMount(galaxy_id) {
-        axios.get(`/api/galaxies/${galaxy_id}`).then(
+    componentDidMount() {
+        axios.get(`/api/galaxies`).then(
             res => {
                 this.setState({ galaxies: res.data })
             }
@@ -36,6 +128,8 @@ export default class Galaxies extends Component {
         )
     }
 
+
+
     handleClose(show) {
         this.setState({ [show]: false });
         // window.scrollTo(50, 50)
@@ -45,25 +139,25 @@ export default class Galaxies extends Component {
         window.scrollTo(0, 0)
     }
 
+    addToFaves(faves) {
+        this.setState(({ faves: faves }))
+    }
+
 
 
     render() {
-        let displayGalaxies = this.state.galaxies.map((galaxy, index) => {
+        console.log(this.state.galaxy)
+        let displayGalaxy = this.state.galaxies.map((galaxy, index) => {
             return (
-                <div key={index}>
-                    <h1>
-                        {galaxy.galaxy_name}
-                    </h1>
-                    <img className='galaxy_pic' src={galaxy.galaxy_pic} />
-                </div>
+                <GalaxyOne key={index} galaxy={galaxy} />
             )
         })
         return (
             <div className='backgroundImage'>
+                <Navbar />
                 <div>
-                    <Navbar />
-                    <div className='displayGalaxies'>
-                        {displayGalaxies}
+                    <div className='displayGalaxy'>
+                        {displayGalaxy}
                     </div>
                     Galaxies
             </div>
@@ -71,3 +165,11 @@ export default class Galaxies extends Component {
         )
     }
 }
+
+
+
+
+
+
+
+

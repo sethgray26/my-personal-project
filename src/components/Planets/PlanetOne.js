@@ -25,7 +25,7 @@ export default class PlanetOne extends Component {
     }
 
     addToFaves() {
-        axios.post(`/api/favorites/planet`, { planet_id: this.props.planet.planet_id })
+        axios.post(`/api/favorites/planets`, { planet_id: this.props.planet.planet_id })
     }
 
 

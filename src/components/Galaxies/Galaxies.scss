@@ -1,5 +1,19 @@
+$black:#000000;
+$dark-blue: #001757;
+
+$list1: $black, $dark-blue, $black;
+
+@mixin gradient($direction, $list) {
+    background: -webkit-linear-gradient($direction, $list);
+    background: -moz-linear-gradient($direction, $list);
+    background: -o-linear-gradient($direction, $list);
+    background: linear-gradient($direction, $list)
+}
+
+
+
 .backgroundImage{
-	background-image: url(https://i.pinimg.com/originals/6b/7d/3b/6b7d3ba6caad663fa1ba0402b927d428.jpg);
+	background-image: url(https://www.youredm.com/wp-content/uploads/2014/10/Earth-From-Space-Space-1080x1920.jpg);
     background-position: center;
     background-size: cover;
     height: 160vh;
@@ -8,15 +22,142 @@
     opacity: .99;
 }
 
-.displayGalaxies{
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	align-items: stretch;
-    align-content: stretch;
+.modalWindow{
+    position: fixed;
 }
-.galaxy_pic{
+.particles{
+    position: absolute;
+    top: 0;
+    z-index: -10;
+    overflow: hidden;
+    // right: 0;
+    // left: 0;
+    // width: 100vw;
+    // height: 100vh;
+}
+
+.galaxy_pic_img{
     height: 32vh;
     width: 28.1vw;
+}
+
+
+body{
+    height:100vh;
+    width: 100vw;
+    @include gradient(top, $list1);
+}
+body::-webkit-scrollbar{
+    width:0px;
+    height:0px;
+}
+
+.galaxy-page-img{
+    height: 33vh;
+    width: 28.1vw;
+}
+
+.backdrop{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9998;
+    background: rgba(0, 0, 0, 0.6);
+    // z-index: 9999999;
+}
+.background{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.6);
+}
+.galaxy-modal{
+    position: relative;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 60%;
+    @include gradient(top, $list1);
+    -webkit-box-shadow: 1px 2px 8px 2px rgba(0,0,0,0.5); 
+    box-shadow: 1px 2px 8px 2px rgba(0,0,0,0.5);
+    overflow: scroll;
+    z-index: 999999999;
+}
+.galaxy-modal::-webkit-scrollbar{
+    overflow: scroll;
+    width: 1px;
+    height: 1px;
+    background-color: black
+}
+
+.galaxy-modal-img{
+    // float: left;
+    height: 35vh;
+    width: 50vw;
+    // margin-left: 10vw;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: stretch;
+    z-index: 999999999;
+}
+
+.close-modal{
+    left: 74.89%;
+    position: fixed;
+    z-index: 999999999;
+}
+.galaxy-text{
+    font-size: 1.2rem;
+    margin-top: 8vh;
+    color: antiquewhite;
+    float: left;
+}
+.galaxy-descript{
+    font-size: 1.2rem;
+    margin-top: -1vh;
+    color: antiquewhite;
+    float: left;
+}
+.galaxy-name{
+    position: absolute;
+    font-size: 1.5rem;
+    margin-left: 23vw;
+    color: antiquewhite;
+    // float: left;
+}
+.button{
+    // opacity: .2;
+}
+.galaxy-left-row{
+    height: 133.5vh;
+    // height: 120vh;
+    width: 28.1vw;
+    left: 3vw;
+    background-color: red;
+    position: absolute
+}
+
+.constel-middle-row{
+    height: 133.5vh;
+    // height: 120vh;
+    width: 28.1vw;
+    left: 35.5vw;
+    background-color: antiquewhite;
+    position: absolute
+}
+.constel-right-row{
+    height: 133.5vh;
+    // height: 120vh;
+    width: 28.1vw;
+    left: 68vw;
+    background-color: blue;
+    position: absolute; 
 }

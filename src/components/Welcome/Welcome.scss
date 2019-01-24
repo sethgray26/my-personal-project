@@ -23,13 +23,12 @@ font-family: 'Audiowide', cursive;
     font-size: 22vh;
     margin-top: 0;
     margin-bottom: 0;
-    // margin-left: 20rem;
+    margin-left: 23rem;
     justify-content: space-around;
     font-family: 'orbitron';
     background: -webkit-linear-gradient(#3366ff,silver, #3366ff,);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    // @include gradient(right, $list2)
 }
 
 #welcomeBox{
@@ -56,16 +55,17 @@ font-family: 'Audiowide', cursive;
     // padding-top: 100vh;
     margin: 1vh;
     margin-left: 10vw;
+    font-size: 1rem;
 }
 .user-input{
     position: absolute;
-    margin-top: 6vh;
-    margin-left: -7.7vw;
+    margin-top: 3vh;
+    margin-left: -7.8vw;
     width: 11.8vw;
 }
 .password{
     position: relative;
-    margin-top: 8vh;
+    margin-top: 5vh;
     margin-left: 10vw;
 }
 .pass-input{
@@ -74,26 +74,27 @@ font-family: 'Audiowide', cursive;
     margin-left: -7.6vw;
     width: 11.8vw;
 }
+.register-login{
+    margin-top: 5.5vh;
+}
 .register{
     height: 3vh;
-    margin-top: 9.3vh;
-    margin-left: 1.7vw;
+    margin-left: 6vw;
     width: 4.6vw;
 }
 .login{
     height: 3vh;
-    margin-left: 2.6vw;
+    margin-left: 3.8vw;
     width: 3.7vw;
 }
 .continue{
     height: 10vh;
-    margin-left: 1.2vw;
+    margin-top: 1vh;
+    margin-left: 6vw;
+    // width: 19vw;
 }
 .continue-btn{
-    position: absolute;
-    left: 14.5vw;
-    top: 25.1vh;
-    height: 3vh;
+    width: 12.1vw;
 }
 button{
     background-image: linear-gradient(rgb(161, 170, 214), rgb(76, 76, 248));
