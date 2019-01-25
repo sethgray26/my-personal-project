@@ -68,19 +68,19 @@ export default class Constellations extends Component {
     addToFaves(faves) {
         this.setState(({ faves: faves }))
     }
-    // alStyle = () => {
+    alStyle = () => {
 
-    //     return {
-    //         position: 'fixed',
-    //         width: 400,
-    //         zIndex: 1040,
+        return {
+            position: 'fixed',
+            width: 400,
+            zIndex: 1040,
 
-    //         border: '1px solid #e5e5e5',
-    //         backgroundColor: 'white',
-    //         boxShadow: '0 5px 15px rgba(0,0,0,.5)',
-    //         padding: 20
-    //     };
-    // };
+            border: '1px solid #e5e5e5',
+            backgroundColor: 'white',
+            boxShadow: '0 5px 15px rgba(0,0,0,.5)',
+            padding: 20
+        };
+    };
 
 
 
@@ -96,11 +96,65 @@ export default class Constellations extends Component {
 
             <div className='backgroundImageConstel'>
                 <Navbar />
-                {/* <div className='particles'> */}
+                {/* <div className='particlesOnConstel'>
+                <Particles
+                params={{
+                  "particles": {
+                    "number": {
+                      "value": 700,
+                      "density": {
+                        "enable": true,
+                        "value_area": 6000,
+                      },
+                    },
+                    "color": {
+                      "value": "#ffffb3"
+                    },
+                    "line_linked": {
+                      "enable": true,
+                      "opacity": .1,
+                      "bounce": false,
+                    },
+                    "move": {
+                      'out_mode': 'out',
+                      "direction": "bottom-left",
+                      "speed": .5,
+                      "bounce": false
+                    },
+                    "size": {
+                      "value": 4
+                    },
+                    "opacity": {
+                      "anim": {
+                        "enable": true,
+                        "speed": 4,
+                        "opacity_min": 0.09
+                      }
+                    }
+                  },
+                  "interactivity": {
+                    "events": {
+                      "onhover": {
+                        "enable": true,
+                        "mode": "bubble"
+                      }
+                    },
+                    "modes": {
+                      // "push": {
+                      //   "particles_nb": 1
+                      // },
+                      "bubble": {
+                        "size": 10,
+                        "distance": 200
+                      }
+                    }
+                  }
+                }} />
+                </div> */}
+                {/* <div className='particlesOnConstel'> */}
                 <figure id='constellation-container'>
                     <div className='displayConstel'>
                             {displayConstel}
-                        Constellations
                     </div>
                 </figure>
                 {/* </div> */}

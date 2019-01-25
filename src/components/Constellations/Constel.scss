@@ -11,14 +11,25 @@ $list1: $black, $dark-blue, $black;
 }
 
 .backgroundImageConstel{
-	background-image: url(https://i.ytimg.com/vi/Gsc0HtG6rTc/maxresdefault.jpg);
-    background-position: center;
-    // background-size: cover;
-    background-repeat: repeat;
-    height: 160vh;
+	// background-image: url(https://i.ytimg.com/vi/Gsc0HtG6rTc/maxresdefault.jpg);
+    background-size: cover;
+    height: 100%;
     width: 100vw;
-    background-color: black;
     opacity: .99;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-y: auto;
+
+}
+
+.particlesOnConstel {
+    max-height: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
 }
 
 
@@ -42,37 +53,27 @@ $list1: $black, $dark-blue, $black;
     margin-left: 4.9vw;
 }
 
-// {
-//     padding-left: 10vw;
-//     padding-right: 10vw;
-//     background-size: cover;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     size: 100%;
-//     height: 100%;
-//     margin-right: 10vw;
-//     display: flex;
-// 	flex-wrap: wrap;
-//     justify-content: space-between;
-//     height: 133.5vh;
-//     width: 85vw;
-//     margin-right: 9.5vw;
-//     background-color: red;
-// }
-
-#constellation-container{
-    margin-right: -20vw;
+.backgroundImageConstel::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
 }
 
-body{
-    height:100vh;
-    width: 100vw;
-    @include gradient(top, $list1);
-}
 body::-webkit-scrollbar{
     width:0px;
     height:0px;
 }
+
+
+#constellation-container{
+    // margin-right: -20vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    size: 100%;
+    height: 100vh;
+
+}
+
 
 .constel-page-img{
     height: 40vh;

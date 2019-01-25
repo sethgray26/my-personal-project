@@ -42,7 +42,7 @@ export default class GalaxyOne extends Component {
                     <img className='galaxies-page-img' onClick={() => this.handleShow('show1')} src={galaxy.galaxy_pic} alt='' />
                 </div>
 
-                <Modal className='modalWindow' show={this.state.show1}>
+                <Modal className='modalWindow' show={this.state.show1} style={{ position: 'fixed' }}>
                     <div className='background'>
                         <div className='backdrop' onClick={() => this.handleClose('show1')}>
                         </div>

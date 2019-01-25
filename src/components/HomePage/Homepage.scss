@@ -21,9 +21,11 @@
 }
 
 .thumb{
-    // position: absolute;
     margin-top: -2.3vh;
-    float: left;
     max-height: 7vh;
     z-index: 9999;
+}
+.thumb-wrapper, .axis-vertical {
+    display: flex !important;
+    justify-content: center !important;
 }
