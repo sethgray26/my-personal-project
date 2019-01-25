@@ -1,31 +1,72 @@
+$font-white: #F2F3F4;
+$silver: silver;
+$right-silver: #d9d9d9;
+
+$list2: $silver, $right-silver;
+
+@mixin gradient($direction, $list) {
+    background: -webkit-linear-gradient($direction, $list);
+    background: -moz-linear-gradient($direction, $list);
+    background: -o-linear-gradient($direction, $list);
+    background: linear-gradient($direction, $list)
+}
+
+
 @font-face{
     font-family: 'Orbitron', sans-serif;
 font-family: 'Audiowide', cursive;
 @import url('https://fonts.googleapis.com/css?family=Audiowide|Orbitron');
 }
 
-.homeStarChart{
-    position: absolute;
-    font-size: 4vh;
-    margin-top: 0vh;
-    margin-left: -70vw;
-    font-family: 'orbitron';
-    background: -webkit-linear-gradient(#3366ff,silver, #3366ff,);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    // @include gradient(right, $list2)
+.navBar{
+    display: flex;
+    height: 10vh;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    background-color: rgba(0, 0, 0, 0.6);
 }
-.home_image {
+
+.home-imageSizing {
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 5vw;
+    height: 7.6vh;
+    margin-top: 1vh;
+    // left: -45.6vw;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items:center; 
-    margin-right: 96vw;
-    float: right
 }
+
+
+.homeStarChart{
+    // position: absolute;
+    font-size: 3rem;
+    margin-top: 0vh;
+    margin-bottom: 0vh;
+    // margin-left: -70vw;
+    font-family: 'orbitron';
+    background: -webkit-linear-gradient(#3366ff,silver, #3366ff,);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navUsername{
+    position: absolute;
+    font-size: 3rem;
+    margin-top: -1vh;
+    margin-bottom: 0vh;
+    margin-left: 65.5vw;
+    // margin-left: -70vw;
+    font-family: 'orbitron';
+    background: -webkit-linear-gradient(#3366ff,silver, #3366ff,);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .profilePic{
     position: absolute;
     width: 50px;
@@ -34,13 +75,13 @@ font-family: 'Audiowide', cursive;
     display: flex;
     justify-content: center;
     align-items:center;
-    // float: right; 
-    margin-left: -3.7vw;
-    margin-top: 3.7vh;
+    margin-left: 71.9vw; 
 }
-.navBar{
-    justify-content:flex-end;
-    margin-left: 75vw;
-    // float: right;
 
+.nav-buttons{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    margin-left: 41.9vw;
+    width: 34vw;
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Profile.scss'
 import Navbar from '../../components/Navbar/Navbar'
 import { connect } from 'react-redux'
 import axios from 'axios';
@@ -76,7 +77,7 @@ export class Profile extends Component {
             })
         }
         return (
-            <div>
+            <div className='backgroundProfileImage'>
                 <Navbar />
                 <img src={this.props.profile_pic} alt='' />
                 {this.props.username}

@@ -9,18 +9,21 @@ $list1: $black, $dark-blue, $black;
     background: -o-linear-gradient($direction, $list);
     background: linear-gradient($direction, $list)
 }
+
+.backgroundImageConstel{
+	background-image: url(https://i.ytimg.com/vi/Gsc0HtG6rTc/maxresdefault.jpg);
+    background-position: center;
+    // background-size: cover;
+    background-repeat: repeat;
+    height: 160vh;
+    width: 100vw;
+    background-color: black;
+    opacity: .99;
+}
+
+
 .modalWindow{
     position: fixed;
-}
-.particles{
-    position: absolute;
-    top: 0;
-    z-index: -10;
-    overflow: hidden;
-    // right: 0;
-    // left: 0;
-    // width: 100vw;
-    // height: 100vh;
 }
 
 .constel_pic_img{
@@ -28,15 +31,39 @@ $list1: $black, $dark-blue, $black;
     width: 28.1vw;
 }
 
-#displayConstel{
-    padding-left: 10vw;
-    padding-right: 10vw;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    size: 100%;
-    height: 100%;
+.displayConstel{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100vh;
+    width: 85vw;
+    background-color: rgba(0, 0, 0, 0.01);
+    color: aliceblue;
+    margin-left: 4.9vw;
 }
+
+// {
+//     padding-left: 10vw;
+//     padding-right: 10vw;
+//     background-size: cover;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     size: 100%;
+//     height: 100%;
+//     margin-right: 10vw;
+//     display: flex;
+// 	flex-wrap: wrap;
+//     justify-content: space-between;
+//     height: 133.5vh;
+//     width: 85vw;
+//     margin-right: 9.5vw;
+//     background-color: red;
+// }
+
+#constellation-container{
+    margin-right: -20vw;
+}
+
 body{
     height:100vh;
     width: 100vw;
@@ -48,7 +75,7 @@ body::-webkit-scrollbar{
 }
 
 .constel-page-img{
-    height: 33vh;
+    height: 40vh;
     width: 28.1vw;
 }
 
@@ -62,6 +89,7 @@ body::-webkit-scrollbar{
     background: rgba(0, 0, 0, 0.6);
     // z-index: 9999999;
 }
+
 .background{
     position: fixed;
     top: 0px;
@@ -71,6 +99,7 @@ body::-webkit-scrollbar{
     z-index: 99999;
     background: rgba(0, 0, 0, 0.6);
 }
+
 .constel-modal{
     position: relative;
     top: 25%;
@@ -83,6 +112,7 @@ body::-webkit-scrollbar{
     overflow: scroll;
     z-index: 999999999;
 }
+
 .constel-modal::-webkit-scrollbar{
     overflow: scroll;
     width: 1px;
@@ -132,27 +162,12 @@ body::-webkit-scrollbar{
     // opacity: .2;
 }
 .constel-left-row{
+    display: flex;
+	flex-wrap: wrap;
+    // position: absolute;
+    justify-content: space-between;
     height: 133.5vh;
-    // height: 120vh;
-    width: 28.1vw;
-    left: 3vw;
+    width: 85vw;
+    margin-right: 9.5vw;
     background-color: red;
-    position: absolute
-}
-
-.constel-middle-row{
-    height: 133.5vh;
-    // height: 120vh;
-    width: 28.1vw;
-    left: 35.5vw;
-    background-color: antiquewhite;
-    position: absolute
-}
-.constel-right-row{
-    height: 133.5vh;
-    // height: 120vh;
-    width: 28.1vw;
-    left: 68vw;
-    background-color: blue;
-    position: absolute; 
 }
