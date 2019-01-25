@@ -22,7 +22,7 @@ export function Navbar(props) {
                 <Link id='contel-link' to='constellations'> <button> Constellations </button> </Link>
                 <Link to='planets'> <button> Planets </button> </Link>
                 <Link to='galaxies'> <button> Galaxies </button> </Link>
-                <a href='http://localhost:3000/welcome/logout'> <button> Logout </button> </a>
+                <a href={REACT_APP_LOGOUT}> <button> Logout </button> </a>
             </div>
         </div>
     )

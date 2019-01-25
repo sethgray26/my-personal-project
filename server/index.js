@@ -5,7 +5,7 @@ const session = require('express-session')
 const controller = require('./controller')
 
 
-const { SERVER_PORT, CONNECTION_STRING, SECRET } = process.env
+const { SERVER_PORT, CONNECTION_STRING, SECRET, REACT_APP_LOGIN } = process.env
 
 const app = express()
 
@@ -16,6 +16,8 @@ app.use(session({
     saveUninitialized: false
 }))
 
+
+app.use(express.static(`${__dirname}/../build`));
 
 
 massive(CONNECTION_STRING).then((db) => {
@@ -50,5 +52,5 @@ app.get('/api/galaxies', controller.getGalaxies)
 
 app.get('/welcome/logout', (req, res) => {
     req.session.destroy();
-    res.redirect('http://localhost:3000/#/')
+    res.redirect(REACT_APP_LOGIN)
 })
