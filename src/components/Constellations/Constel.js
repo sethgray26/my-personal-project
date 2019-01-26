@@ -2,24 +2,7 @@ import React, { Component } from 'react'
 import './Constel.scss'
 import Navbar from '../../components/Navbar/Navbar'
 import ConstelOne from './constelOne'
-
-import aries from '../../photos/aries.jpg'
-import taurus from '../../photos/taurus.jpg'
-import gemini from '../../photos/gemini.jpg'
-import cancer from '../../photos/cancer.jpg'
-import leo from '../../photos/leo.jpg'
-import virgo from '../../photos/virgo.jpg'
-import libra from '../../photos/libra.jpg'
-import scorpio from '../../photos/scorpio.png'
-import sagitarrius from '../../photos/sagitarrius.jpg'
-import capricorn from '../../photos/capricorn.jpg'
-import aquarius from '../../photos/aquarius.jpg'
-import pisces from '../../photos/pisces.jpg'
-
-import { Modal, Button } from 'react-bootstrap'
 import axios from 'axios';
-import Particles from 'react-particles-js'
-
 
 export default class Constellations extends Component {
     constructor(props, context) {

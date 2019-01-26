@@ -9,9 +9,6 @@ import { Modal, Button } from 'react-bootstrap'
 
 
 
-
-
-
 export default class Planets extends Component {
     constructor(props, context) {
         super(props, context);

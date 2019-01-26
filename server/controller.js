@@ -120,7 +120,7 @@ module.exports = {
 
     deletePlanetFave: async (req, res) => {
         const { planet_id } = req.params
-        // const { id } = req.session.user
+        const { id } = req.session.user
         const db = req.app.get('db')
         const deletePlanetFave = await db.delete_planet_fave({ planet_id: +planet_id, user_id: id })
         const favorites = await db.planet_faves({ user_id: id })
@@ -129,7 +129,7 @@ module.exports = {
 
     addGalaxyFave: async (req, res) => {
         const { galaxy_id } = req.body
-        // const { id } = req.session.user
+        const { id } = req.session.user
         const db = req.app.get('db')
         const addGalaxyFave = await db.add_galaxy_fave({ user_id: id, galaxy_id: galaxy_id })
         const favorites = await db.galaxy_faves({ user_id: id })

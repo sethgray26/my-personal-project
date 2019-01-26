@@ -21,10 +21,6 @@ class App extends Component {
       <div className={this.props.location.pathname === '/constellations'
         ?
         'App constellationBackground '
-        :
-        this.props.location.pathname === '/galaxies'
-          ?
-          'App galaxyBackground'
           :
           'App'
       }>
