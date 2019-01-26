@@ -69,13 +69,12 @@ export default class Planets extends Component {
         return (
             <div className='backgroundImagePlanet'>
                 <Navbar />
-                <div>
-                    <div className='displayPlanets'>
-                        {displayPlanets}
+                <figure id='planet-container'>
+                    <div className='displayPlanet'>
+                            {displayPlanets}
                     </div>
-                    Galaxies
-            </div>
-            </div>
-        )
+                </figure>
+            </div >
+        );
     }
 }

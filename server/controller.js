@@ -15,7 +15,7 @@ module.exports = {
         res.status(200).send({
             message: 'Account Created Successfully!', userData: {
                 ...req.session.user, profile_pic:
-                    'https://vignette.wikia.nocookie.net/pixar/images/a/ae/Alien.jpg/revision/latest?cb=20110220175306'
+                    'https://cdn.images.express.co.uk/img/dynamic/128/590x/Saturn-2-579195.jpg'
             }, loggedIn: true
         })
     },
@@ -34,7 +34,7 @@ module.exports = {
         res.status(200).send({
             message: 'Logged In', userData: {
                 ...req.session.user, profile_pic:
-                    'https://vignette.wikia.nocookie.net/pixar/images/a/ae/Alien.jpg/revision/latest?cb=20110220175306'
+                    'https://cdn.images.express.co.uk/img/dynamic/128/590x/Saturn-2-579195.jpg'
             }, loggedIn: true
         })
     },
@@ -91,20 +91,20 @@ module.exports = {
 
     addConstelFave: async (req, res) => {
         const { constel_id } = req.body
-        // const { id } = req.session.user
+        const { id } = req.session.user
         const db = req.app.get('db')
-        const addConstelFave = await db.add_constel_fave({ user_id: 3, constel_id: constel_id })
-        const favorites = await db.constel_faves({ user_id: 3 })
+        const addConstelFave = await db.add_constel_fave({ user_id: id, constel_id: constel_id })
+        const favorites = await db.constel_faves({ user_id: id })
         console.log(favorites)
         res.status(200).send(favorites)
     },
 
     deleteConstelFave: async (req, res) => {
         const { constel_id } = req.params
-        // const { id } = req.session.user
+        const { id } = req.session.user
         const db = req.app.get('db')
-        const deleteConstelFave = await db.delete_constel_fave({ constel_id: +constel_id, user_id: 3 })
-        const favorites = await db.constel_faves({ user_id: 3 })
+        const deleteConstelFave = await db.delete_constel_fave({ constel_id: +constel_id, user_id: id })
+        const favorites = await db.constel_faves({ user_id: id })
         res.status(200).send(favorites)
     },
 
@@ -122,8 +122,8 @@ module.exports = {
         const { planet_id } = req.params
         // const { id } = req.session.user
         const db = req.app.get('db')
-        const deletePlanetFave = await db.delete_planet_fave({ planet_id: +planet_id, user_id: 3 })
-        const favorites = await db.planet_faves({ user_id: 3 })
+        const deletePlanetFave = await db.delete_planet_fave({ planet_id: +planet_id, user_id: id })
+        const favorites = await db.planet_faves({ user_id: id })
         res.status(200).send(favorites)
     },
 
@@ -131,8 +131,8 @@ module.exports = {
         const { galaxy_id } = req.body
         // const { id } = req.session.user
         const db = req.app.get('db')
-        const addGalaxyFave = await db.add_galaxy_fave({ user_id: 3, galaxy_id: galaxy_id })
-        const favorites = await db.galaxy_faves({ user_id: 3 })
+        const addGalaxyFave = await db.add_galaxy_fave({ user_id: id, galaxy_id: galaxy_id })
+        const favorites = await db.galaxy_faves({ user_id: id })
         console.log(favorites)
         res.status(200).send(favorites)
     },

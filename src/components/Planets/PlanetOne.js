@@ -43,8 +43,8 @@ export default class PlanetOne extends Component {
                 </div>
 
                 <Modal className='modalWindow' show={this.state.show1}>
-                    <div className='background'>
-                        <div className='backdrop' onClick={() => this.handleClose('show1')}>
+                    <div className='planetBackground'>
+                        <div className='planetBackdrop' onClick={() => this.handleClose('show1')}>
                         </div>
                         <figure className='planet-modal' >
                             <Button className='close-modal' onClick={() => this.handleClose('show1')}>X</Button>
