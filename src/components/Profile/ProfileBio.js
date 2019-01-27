@@ -37,9 +37,11 @@ export default class ProfileBio extends Component {
         console.log(this.state)
         return (
             <div>
-                {this.state.bio}
                 <input onChange={(e) => this.handleUpdate(e.target.value)}></input>
                 <button onClick={() => this.updateBio()}> Edit Bio Info </button>
+                <div className='profileBioText'>
+                    {this.state.bio}
+                </div>
             </div>
         )
     }
