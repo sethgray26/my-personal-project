@@ -79,14 +79,23 @@ export class Profile extends Component {
         return (
             <div className='backgroundProfileImage'>
                 <Navbar />
-                <img  src={this.props.profile_pic} alt='' />
-                {this.props.username}
+                <img className='profilePic' src={this.props.profile_pic} alt='' />
+                <hr />
+                <div className='userProfileName'> {this.props.username} </div>
                 <div className='profileBio'>
-                <ProfileBio />
+                    <ProfileBio />
                 </div>
-                {displayConstelFaves}
-                {displayPlanetFaves}
-                {display}
+                <div className='displayFavorites'>
+                    <div className='displayConstelFaves'>
+                        {displayConstelFaves}
+                    </div>
+                    <div className='displayPlanetFaves'>
+                        {displayPlanetFaves}
+                    </div>
+                    <div className='displayGalaxyFaves'>
+                        {display}
+                    </div>
+                </div>
             </div>
         )
     }

@@ -61,7 +61,7 @@ export default class ConstelOne extends Component {
                             <h1 className='constel-name'> {constel.constel_name}
                                 <hr />
                             </h1>
-                            <p className='constel-text'>Date of Birth: March 21 -April 19</p>
+                            <p className='constel-text'>Some Information On This Planet</p>
                             <p className='constel-descript'> {constel.description}  </p>
                         </figure>
                     </div>

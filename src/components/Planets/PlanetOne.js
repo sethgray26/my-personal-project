@@ -58,7 +58,7 @@ export default class PlanetOne extends Component {
                             <h1 className='planet-name'> {planet.planet_name}
                                 <hr />
                             </h1>
-                            <p className='planet-text'></p>
+                            <p className='planet-text'> Some Information On This Planet </p>
                             <p className='planet-descript'> {planet.description}  </p>
                         </figure>
                     </div>

@@ -58,7 +58,7 @@ export default class GalaxyOne extends Component {
                             <h1 className='galaxy-name'> {galaxy.galaxy_name}
                                 <hr />
                             </h1>
-                            <p className='galaxy-text'></p>
+                            <p className='galaxy-text'> Some Information On This Galaxy</p>
                             <p className='galaxy-descript'> {galaxy.description}  </p>
                         </figure>
                     </div>

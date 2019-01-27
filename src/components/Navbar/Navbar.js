@@ -12,7 +12,7 @@ export function Navbar(props) {
                 <Link to='homepage'> <img className='home-imagePosition' src={starhome2} alt='home-page' ></img> </Link>
             </div>
             <Link to='homepage'> <h1 className='homeStarChart'> Star Chart </h1> </Link>
-            <Link to='profile'>  <img className='profilePic' src={props.profile_pic} alt='' /> </Link>
+            <Link to='profile'>  <img className='profilePicNav' src={props.profile_pic} alt='' /> </Link>
             <div className='navUsername'>
                 {props.username}
             </div>

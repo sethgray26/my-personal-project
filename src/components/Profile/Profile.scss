@@ -1,19 +1,57 @@
 .backgroundProfileImage{
 	background-image: url(https://images.unsplash.com/photo-1536697246787-1f7ae568d89a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80);
-    background-position: center;
     background-size: cover;
-    height: 160vh;
+    height: 100%;
     width: 100vw;
-    background-color: black;
     opacity: .99;
-    z-index: 999999999;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-y: auto;
 }
 
 .profileBio{
-    margin-top: 30vh;
-    margin-left: 10vw;
+    // margin-top: 5vh;
+    margin-left: 3vw;
     max-width: 25vw;
 }
 .profileBioText{
     margin-top: 5vh;
+    max-width: 5vw;
+}
+
+.profilePic{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-left: 45vw;
+    border-radius: 50vh; 
+}
+
+.userProfileName{
+    margin-left: 48vw;
+}
+
+.displayFavorites{
+    // margin-left: 25vw;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: stretch;
+}
+
+.displayConstelFaves{
+}
+
+.displayPlanetFaves{
+}
+
+.displayGalaxyFaves{
+
 }
