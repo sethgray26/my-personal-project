@@ -36,7 +36,7 @@ class Welcome extends Component {
     render() {
         return (
             <div>
-                <div id='background' >
+                <div className='backgroundWelcome' >
                     <span >
                         <h1 className='starChart'>
                             Star Chart

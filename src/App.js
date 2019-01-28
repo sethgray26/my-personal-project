@@ -31,14 +31,14 @@ class App extends Component {
               params={{
                 "particles": {
                   "number": {
-                    "value": 700,
+                    "value": 600,
                     "density": {
                       "enable": true,
                       "value_area": 6000,
                     },
                   },
                   "color": {
-                    "value": "#ffffb3"
+                    "value": "#ffffff"
                   },
                   "line_linked": {
                     "enable": true,
@@ -57,8 +57,8 @@ class App extends Component {
                   "opacity": {
                     "anim": {
                       "enable": true,
-                      "speed": 1.5,
-                      "opacity_min": 0.09
+                      "speed": 2,
+                      "opacity_min": 0
                     }
                   }
                 },

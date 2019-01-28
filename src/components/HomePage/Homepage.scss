@@ -47,16 +47,18 @@
 }
 
 .legend{
-    margin-top: 0;
+    height: 5vh;
+    margin-bottom: 78vh; 
+    font-size: 2rem;
+    color: aliceblue;
 }
 
 .homePageGrayBox{
     background-color: rgba(0, 0, 0, .6);
-
+    border-radius: 20px;
 }
 
 .homePageStarChart{
-    // position: absolute;
     font-size: 4rem;
     margin-top: 0vh;
     margin-bottom: 0vh;
@@ -68,16 +70,11 @@
 }
 
 .homePageBody{
-    // position: absolute;
     font-size: 3rem;
-    // margin-top: 0vh;
-    // margin-bottom: 0vh;
     margin-left: -25vw;
     font-family: 'orbitron';
     background: -webkit-linear-gradient(#3366ff,silver, #3366ff,);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-color: rgba(0, 0, 0, .6);
-    
-
 }
