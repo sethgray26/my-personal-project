@@ -36,12 +36,14 @@ export default class ProfileBio extends Component {
     render() {
         console.log(this.state)
         return (
-            <div>
+            <div className='profileBioBackground'>
+                <button className='bioButton' onClick={() => this.updateBio()}> Edit Bio Info </button>
                 <input onChange={(e) => this.handleUpdate(e.target.value)}></input>
-                <button onClick={() => this.updateBio()}> Edit Bio Info </button>
+                <h4 className='profileBioGrayBox'>
                 <div className='profileBioText'>
                     {this.state.bio}
                 </div>
+                </h4>
             </div>
         )
     }

@@ -17,7 +17,7 @@ export default class HomePage extends Component {
     render() {
 
         return (
-            <div>
+            <div className='backgroundForHomePage'>
                 <Navbar />
                 <div id='carousel'>
                     <Carousel >
@@ -33,9 +33,20 @@ export default class HomePage extends Component {
 
                         <div className='slideImage3'>
                             <img src={galaxy1} />
-                            <p className="legend"> Discover Galaxies </p>
+                            <div>
+                                <p className="legend"> Discover Galaxies </p>
+                            </div>
                         </div>
                     </Carousel>
+                    <div className='homePageGrayBox'>
+                        <h1 className='homePageStarChart'>
+                            Welcome To Star Chart!
+                            <h3 className='homePageBody'>
+                        < hr />
+                                Where all your space exploration questions may be answered! You may be wondering why you should use this sight over someone well known like Nasa. Well just look around and we at Star Chart are sure you'll learn something amazing here! Whether it be something new about the stars or a planet you didn't know existed, or even that certain galaxies are not exactly what they appear to be. There is much to be discovered and more as we continually update the site!
+                        </h3>
+                        </h1>
+                    </div>
                 </div>
 
             </div>

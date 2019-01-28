@@ -80,8 +80,8 @@ export class Profile extends Component {
             <div className='backgroundProfileImage'>
                 <Navbar />
                 <img className='profilePic' src={this.props.profile_pic} alt='' />
-                <hr />
                 <div className='userProfileName'> {this.props.username} </div>
+                <hr />
                 <div className='profileBio'>
                     <ProfileBio />
                 </div>

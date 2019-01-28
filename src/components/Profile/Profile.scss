@@ -11,14 +11,31 @@
     overflow-y: auto;
 }
 
-.profileBio{
-    // margin-top: 5vh;
-    margin-left: 3vw;
-    max-width: 25vw;
+.profileBioBackground{
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+    align-content: stretch;
 }
+
+.profileBio{
+    margin-left: 3vw;
+    max-width: 15vw;
+    background-color: rgba(0, 0, 0, .8);    
+}
+
+.profileBioGrayBox{
+    font-size: 1.5rem;
+    font-family: 'orbitron';
+    background: -webkit-linear-gradient(#3366ff,silver, #3366ff,);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .profileBioText{
-    margin-top: 5vh;
-    max-width: 5vw;
+    margin-left: 1vw;    
 }
 
 .profilePic{
@@ -33,7 +50,12 @@
 }
 
 .userProfileName{
-    margin-left: 48vw;
+    margin-left: 42vw;
+    font-size: 2rem;
+    font-family: 'orbitron';
+    background: -webkit-linear-gradient(#030d2c,rgb(0, 0, 0), #030d2c,);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .displayFavorites{
