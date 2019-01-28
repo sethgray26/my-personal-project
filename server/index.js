@@ -5,7 +5,7 @@ const session = require('express-session')
 const controller = require('./controller')
 
 
-const { SERVER_PORT, CONNECTION_STRING, SECRET, REACT_APP_LOGOUT } = process.env
+const { SERVER_PORT, CONNECTION_STRING, SECRET, REACT_APP_HOME } = process.env
 
 const app = express()
 
@@ -52,5 +52,5 @@ app.get('/api/galaxies', controller.getGalaxies)
 
 app.get('/welcome/logout', (req, res) => {
     req.session.destroy();
-    res.redirect(REACT_APP_LOGOUT)
+    res.redirect(REACT_APP_HOME)
 })
